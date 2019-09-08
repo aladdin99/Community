@@ -17,7 +17,7 @@
 </head>
 <body>
 	<!-- 顶部栏 -->
-	<div class="banner">
+	<div class="banner" style="z-index: 100;">
 		<div class="banner_left">
 			<img src="image/home/logo.png" style="margin-top: 50%;
 			margin-left: 50%;transform: translate(-50%,-50%);">
@@ -26,64 +26,295 @@
 			<div>PROFILE PAGE</div>
 			<div>
 				<input type="text" placeholder="Search here people or pages...">
+				<span class="svga">
+					<svg id="olymp-magnifying-glass-icon" viewBox="0 0 34 32">
+						<title>magnifying-glass-icon</title>
+						<path d="M20.809 3.57c-4.76-4.76-12.478-4.76-17.239 0s-4.76 12.48 0 17.239c4.76 4.76 12.48 4.76 17.239 0 4.76-4.759 4.76-12.478 0-17.239zM18.654 18.654c-3.57 3.57-9.361 3.57-12.93 0-3.57-3.57-3.57-9.359 0-12.93s9.361-3.57 12.93 0c3.57 3.569 3.57 9.359 0 12.93z"></path>
+						<path d="M24.022 21.907l2.154-2.156 2.157 2.155-2.154 2.156-2.157-2.155z"></path>
+						<path d="M28.34 28.364c-0.596 0.597-1.559 0.597-2.155 0l-6.464-6.464-0.834-0.852 4.3-4.3-1.312-1.314-6.466 6.466 8.62 8.619c1.783 1.783 4.683 1.783 6.464 0 1.783-1.781 1.783-4.681 0-6.464l-2.155 2.155c0.596 0.596 0.594 1.562 0 2.155z"></path>
+					</svg>
+				</span>
 			</div>
 			<div>Find Friends</div>
 		</div>
 		<div class="banner_msg">
-			<span>消息1</span>
-			<span>消息2</span>
-			<span>消息3</span>
-			<span>消息4</span>
+			<span>
+				<div>
+					<svg id="olymp-happy-face-icon" viewBox="0 0 32 32" style="width: 1.7rem;fill: #fff;">
+						<title>happy-face-icon</title>
+						<path d="M16 0c-8.837 0-16 7.16-16 15.989 0 7.166 4.715 13.227 11.213 15.262v-3.39c-4.69-1.899-8-6.49-8-11.859 0-7.070 5.731-12.802 12.8-12.802s12.8 5.731 12.8 12.802c0 5.37-3.312 9.96-8 11.859v3.378c6.485-2.040 11.187-8.094 11.187-15.25 0-8.829-7.165-15.989-16-15.989zM11.211 12.8h-3.2v3.202h3.2v-3.202zM20.813 12.8v3.202h3.2v-3.202h-3.2zM11.198 19.365c0 1.675 2.146 3.032 4.794 3.032s4.794-1.357 4.794-3.032v-0.16h-9.587v0.16zM14.413 32.002h3.2v-3.2h-3.2v3.2z"></path>
+					</svg>
+					<span style="">6</span>
+				</div>
+			</span>
+			<span>
+				<div>
+					<svg id="olymp-chat---messages-icon" viewBox="0 0 40 32" style="width: 2rem;fill: #fff;">
+						<title>chat---messages-icon</title>
+						<path d="M24.381 7.621h-21.333c-1.378 0-3.048 1.606-3.048 3.046v13.716c0 1.443 1.67 3.048 3.048 3.048v4.57l12.19-4.568v-3.051l-9.143 3.051v-3.051h-3.048v-13.714h21.333v16.763c1.378 0 3.048-1.605 3.048-3.048v-13.716c0-1.44-1.67-3.046-3.048-3.046zM18.286 27.432h3.048v-3.048h-3.048v3.048zM6.095 16.763h15.238v-3.046h-15.238v3.046zM6.095 21.336h9.143v-3.048h-9.143v3.048zM15.238 3.051h24.381c0-1.443-1.67-3.049-3.048-3.049h-21.333c-1.378 0-3.048 1.606-3.048 3.049v1.527h3.048v-1.527zM36.571 16.763l-4.571-0.002v3.051l-3.048-1.016v3.301l6.095 2.284v-4.568c0.779 0 1.524 0 1.524 0 1.378 0 3.048-1.606 3.048-3.049v-4.571h-3.048v4.571zM36.571 9.144h3.048v-3.048h-3.048v3.048z"></path>
+					</svg>
+					<span style="position: absolute;top: -.8rem;left: 1.7rem;">2</span>
+				</div>
+			</span>
+			<span>
+				<div>
+					<svg id="olymp-thunder-icon" viewBox="0 0 26 32" style="width: 1.4rem;fill: #fff;">
+						<title>thunder-icon</title>
+						<path d="M25.6 11.198h-8l6.4-11.198-18.669 0.005-5.331 17.597h4.798l-1.598 14.398 4.8-4.458v-4.914l-1.6 1.371 1.6-9.602h-3.2l3.2-11.2h9.6l-4.8 11.2h4.8v4.23l8-7.43zM11.2 22.4h3.2v-3.2h-3.2v3.2z"></path>
+					</svg>
+					<span style="position: absolute;top: -.8rem;left: 1.7rem;">8</span>
+				</div>
+			</span>
+
+			<!-- 媒体查询，在宽度小于768px显示 搜索-->
+			<span>
+				<svg id="olymp-magnifying-glass-icon" viewBox="0 0 34 32" style="width: 1.5rem;fill: #fff;">
+					<title>magnifying-glass-icon</title>
+					<path d="M20.809 3.57c-4.76-4.76-12.478-4.76-17.239 0s-4.76 12.48 0 17.239c4.76 4.76 12.48 4.76 17.239 0 4.76-4.759 4.76-12.478 0-17.239zM18.654 18.654c-3.57 3.57-9.361 3.57-12.93 0-3.57-3.57-3.57-9.359 0-12.93s9.361-3.57 12.93 0c3.57 3.569 3.57 9.359 0 12.93z"></path>
+					<path d="M24.022 21.907l2.154-2.156 2.157 2.155-2.154 2.156-2.157-2.155z"></path>
+					<path d="M28.34 28.364c-0.596 0.597-1.559 0.597-2.155 0l-6.464-6.464-0.834-0.852 4.3-4.3-1.312-1.314-6.466 6.466 8.62 8.619c1.783 1.783 4.683 1.783 6.464 0 1.783-1.781 1.783-4.681 0-6.464l-2.155 2.155c0.596 0.596 0.594 1.562 0 2.155z"></path>
+				</svg>
+			</span>
 		</div>
-		<div class="banner_avatar">head</div>
-		<div class="banner_right"></div>
+		<div class="banner_avatar">
+			<div class="banner_avatar_inner">
+				<img src="image/home/author-page.jpg" class="banner_avatar_img">
+				<div class="banner_avatar_name">
+					<span class="name">
+						<span>Aladdin 99</span>
+						<span style="float: right;">
+							<svg id="olymp-dropdown-arrow-icon" viewBox="0 0 48 32" style="width: .5rem;fill: #fff;">
+								<title>dropdown-arrow-icon</title>
+								<path d="M41.888 0.104l-17.952 19.064-17.952-19.064-5.984 6.352 23.936 25.44 23.936-25.44z"></path>
+							</svg>
+						</span>
+					</span>
+					<span class="sign">
+						SPACE COWBOY
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="banner_right">
+			<span>
+				<svg id="olymp-menu-icon" viewBox="0 0 41 32" style="fill: #fff;width: 3rem;">
+			<title>menu-icon</title>
+			<path d="M4.571 0h-4.571v4.571h4.571v-4.571zM9.143 0v4.571h32v-4.571h-32zM13.714 13.714h-13.714v4.571h13.714v-4.571zM18.286 13.714v4.571h4.571v-4.571h-4.571zM27.429 18.286h13.714v-4.571h-13.714v4.571zM0 32h32v-4.569h-32v4.569zM36.571 32h4.571v-4.569h-4.571v4.569z"></path>
+		</svg>
+			</span>
+		</div>
 	</div>
 
 	<!-- 左侧栏 -->
 	<ul class="column_left">
-		<li>1</li>
-		<li>2</li>
-		<li>3</li>
-		<li>4</li>
-		<li>5</li>
-		<li>6</li>
-		<li>7</li>
-		<li>8</li>
-		<li>9</li>
-		<li>10</li>
-		<li>11</li>
+		<li>
+			<svg id="olymp-menu-icon" viewBox="0 0 41 32" style="width: 1.67rem;fill: #999ebe;">
+				<title>menu-icon</title>
+				<path d="M4.571 0h-4.571v4.571h4.571v-4.571zM9.143 0v4.571h32v-4.571h-32zM13.714 13.714h-13.714v4.571h13.714v-4.571zM18.286 13.714v4.571h4.571v-4.571h-4.571zM27.429 18.286h13.714v-4.571h-13.714v4.571zM0 32h32v-4.569h-32v4.569zM36.571 32h4.571v-4.569h-4.571v4.569z"></path>
+			</svg>
+			<span>
+				Menu
+			</span>
+		</li>
+		<li>
+			<svg id="olymp-newsfeed-icon" viewBox="0 0 29 32" style="width: 1.67rem;fill: #999ebe;">
+				<title>newsfeed-icon</title>
+				<path d="M6.4 25.602v-3.202h9.6v3.202h-9.6zM6.4 16h16v3.2h-16v-3.2zM22.4 25.602v6.398h-22.4v-28.8c0-1.766 1.434-3.2 3.2-3.2h22.4c1.766 0 3.2 1.434 3.2 3.2v9.6h-25.6v16.002h16v-6.402h9.6v3.202h-6.4zM25.6 9.6v-6.4h-22.4v6.4h22.4zM8 8h-3.2v-3.2h3.2v3.2zM12.8 8h-3.2v-3.2h3.2v3.2zM17.6 8h-3.2v-3.2h3.2v3.2zM25.6 16h3.2v3.2h-3.2v-3.2z"></path>
+			</svg>
+			<span>
+				News
+			</span>
+		</li>
+		<li>
+			<svg id="olymp-star-icon" viewBox="0 0 32 32" style="width: 1.67rem;fill: #999ebe;">
+				<title>star-icon</title>
+				<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
+				<path d="M31.88 11.91c-0.275-0.826-0.984-1.43-1.837-1.562l-8.309-1.28-3.611-7.763c-0.379-0.816-1.194-1.336-2.090-1.336-0.893 0-1.707 0.522-2.086 1.336l-3.613 7.763-8.309 1.28c-0.854 0.131-1.563 0.736-1.838 1.562-0.275 0.827-0.067 1.739 0.536 2.36l6.088 6.298-1.413 8.731c-0.142 0.88 0.226 1.762 0.947 2.277 0.397 0.28 0.862 0.424 1.328 0.424 0.384 0 0.766-0.098 1.115-0.291l7.243-4.037 4.768 2.656v-3.662l-4.768-2.658-7.184 4.005 1.378-8.517-1.114-1.154-4.922-5.090 8.323-1.282 0.723-1.552 2.798-6.014 3.52 7.566 8.326 1.283-6.038 6.243 0.733 4.53h3.242l-0.56-3.458 6.091-6.298c0.6-0.622 0.806-1.534 0.531-2.362z"></path>
+			</svg>
+			<span>
+				Page
+			</span>
+		</li>
+		<li>
+			<svg id="olymp-happy-faces-icon" viewBox="0 0 33 32" style="width: 1.9rem;fill: #999ebe;">
+				<title>happy-faces-icon</title>
+				<path d="M13.329 5.357c-7.364 0-13.333 5.965-13.333 13.325 0 5.971 3.929 11.023 9.344 12.716v-2.823c-3.908-1.584-6.667-5.409-6.667-9.885 0-5.889 4.776-10.665 10.667-10.665s10.667 4.776 10.667 10.665c0 4.476-2.759 8.303-6.667 9.885v2.815c5.404-1.7 9.323-6.745 9.323-12.708 0-7.36-5.969-13.325-13.333-13.325zM9.34 16.025h-2.667v2.665h2.667v-2.665zM17.34 16.025v2.665h2.667v-2.665h-2.667zM9.328 21.495c0 1.395 1.788 2.527 3.995 2.527s3.995-1.132 3.995-2.527v-0.135h-7.989v0.135zM12.007 32.025h2.667v-2.668h-2.667v2.668zM13.805 2.691h8.868c0 0 1.495 0.417 2.183 0.697l2.397-1.797c-1.747-0.993-3.761-1.565-5.913-1.565-2.856 0-5.475 1.001-7.535 2.665zM32.472 7.56l-2.131 2.129c0.195 0.751 0.331 1.523 0.331 2.336 0 1.756-0.488 3.392-1.333 4.789v4.14c2.452-2.195 4-5.38 4-8.931 0.001-1.58-0.311-3.083-0.867-4.464zM30.673 4.025h-2.667v2.667h2.667v-2.667z"></path>
+			</svg>
+			<span>
+				Groups
+			</span>
+		</li>
+		<li>
+			<svg id="olymp-headphones-icon" viewBox="0 0 36 32"style="width: 1.67rem;fill: #999ebe;">
+				<title>headphones-icon</title>
+				<path d="M9.792 17.78c0.491 0 0.889 0.398 0.889 0.889v8.891c0 0.489-0.398 0.885-0.889 0.885s-0.889-0.396-0.889-0.885v-8.891c0-0.491 0.398-0.889 0.889-0.889zM9.792 14.224c-2.452 0-4.444 1.995-4.444 4.444v8.891c0 2.448 1.993 4.441 4.444 4.441s4.444-1.993 4.444-4.441v-8.891c0-2.45-1.993-4.444-4.444-4.444v0z"></path>
+				<path d="M6.972 26.597c-1.883-0.075-3.388-1.612-3.388-3.515s1.508-3.44 3.388-3.515v-3.556c-3.861 0.078-6.972 3.218-6.972 7.099s3.111 7.020 6.972 7.097v-3.611z"></path>
+				<path d="M25.762 17.78c0.491 0 0.889 0.398 0.889 0.889v8.891c0 0.489-0.398 0.885-0.889 0.885s-0.889-0.396-0.889-0.885v-8.891c0-0.491 0.398-0.889 0.889-0.889zM25.762 14.224c-2.452 0-4.444 1.995-4.444 4.444v8.891c0 2.448 1.993 4.441 4.444 4.441 2.45 0 4.443-1.993 4.443-4.441v-8.891c0-2.45-1.993-4.444-4.443-4.444v0z"></path>
+				<path d="M28.583 26.597c1.883-0.075 3.388-1.612 3.388-3.515s-1.508-3.44-3.388-3.515v-3.556c3.861 0.078 6.972 3.218 6.972 7.099s-3.111 7.020-6.972 7.097v-3.611z"></path>
+				<path d="M4.404 9.426c-0.539 1.5-0.848 3.111-0.848 4.796v4.686h3.556v-4.686c0-0.942 0.135-1.851 0.364-2.72l-3.072-2.076z"></path>
+				<path d="M17.778 0c-1.687 0-3.298 0.309-4.8 0.848l2.069 3.074c0.875-0.231 1.785-0.366 2.731-0.366 5.883 0 10.667 4.784 10.667 10.667v4.686h3.556v-4.686c0-7.854-6.368-14.222-14.222-14.222z"></path>
+				<path d="M7.148 3.518h3.556v3.556h-3.556v-3.556z"></path>
+			</svg>
+			<span>
+				Music
+			</span>
+		</li>
+		<li>
+			<svg id="olymp-weather-icon" viewBox="0 0 38 32" style="width: 1.9rem;fill: #999ebe;">
+				<title>weather-icon</title>
+				<path d="M18.909 29.091h2.909v2.909h-2.909v-2.909z"></path>
+				<path d="M28.236 21.393c0-3.446-3.037-6.243-6.828-6.353-1.809-2.070-4.609-3.405-7.76-3.405-5.252 0-9.536 3.697-9.852 8.362-2.256 1.062-3.796 3.185-3.796 5.638 0 3.516 3.159 6.365 7.059 6.365h8.941v-2.909h-8.941c-2.288 0-4.15-1.549-4.15-3.456 0-1.238 0.815-2.39 2.124-3.005l1.548-0.729 0.116-1.708c0.214-3.168 3.267-5.649 6.95-5.649 2.201 0 4.231 0.879 5.571 2.41l0.836 0.956 1.27 0.036c2.208 0.065 4.004 1.61 4.004 3.446v2.016l1.887 0.707c1.139 0.431 1.876 1.36 1.876 2.368 0 0.644 0 2.608-3.209 2.608h-1.155v2.909h1.155c3.379 0 6.118-1.789 6.118-5.517 0-2.294-1.553-4.26-3.764-5.089z"></path>
+				<path d="M21.818 7.273c-4.016 0-7.363 2.727-8.38 6.419l2.561 0.855 0.179 0.087c0.615-2.551 2.899-4.452 5.639-4.452 3.213 0 5.818 2.607 5.818 5.818 0 1.686-0.729 3.193-1.875 4.257 0.522 0.682 1.168 1.529 1.756 2.304 1.841-1.603 3.028-3.932 3.028-6.561 0-4.819-3.908-8.727-8.727-8.727zM13.693 5.818l-2.057-2.058c-0.569-0.567-1.489-0.567-2.057 0-0.569 0.57-0.569 1.489 0 2.058l2.057 2.057c0.569 0.57 1.488 0.57 2.057 0 0.569-0.567 0.569-1.487 0-2.057zM21.818 5.818c0.804 0 1.455-0.652 1.455-1.455v-2.909c0-0.801-0.65-1.455-1.455-1.455s-1.455 0.653-1.455 1.456v2.909c0 0.801 0.65 1.453 1.455 1.453zM36.364 13.091h-2.909c-0.804 0-1.455 0.652-1.455 1.456s0.65 1.453 1.455 1.453h2.909c0.804 0 1.455-0.649 1.455-1.453s-0.65-1.456-1.455-1.456z"></path>
+				<path d="M33.277 3.223c0.57 0.569 0.567 1.487-0.001 2.057l-2.057 2.057c-0.569 0.569-1.487 0.57-2.057 0.001-0.569-0.57-0.569-1.489 0-2.060l2.057-2.057c0.569-0.569 1.488-0.567 2.058 0.001z"></path>
+			</svg>
+			<span>
+				Weather
+			</span>
+		</li>
+		<li>
+			<svg id="olymp-calendar-icon" viewBox="0 0 26 32" style="width: 1.67rem;fill: #999ebe;">
+				<title>calendar-icon</title>
+				<path d="M23.273 32h2.909v-2.909h-2.909v2.909zM23.273 2.911h-2.909v-1.456c0-0.801-0.652-1.455-1.455-1.455-0.804 0-1.455 0.653-1.455 1.455v1.456h-8.727v-1.456c0-0.801-0.652-1.455-1.455-1.455-0.804 0-1.455 0.653-1.455 1.455v1.456h-2.909c-1.606 0-2.909 1.302-2.909 2.909v23.271c0 1.607 1.303 2.909 2.909 2.909h17.455v-2.909h-17.455v-23.271h2.909v1.453c0 0.803 0.65 1.455 1.455 1.455 0.803 0 1.455-0.652 1.455-1.455v-1.453h8.727v1.453c0 0.803 0.65 1.455 1.455 1.455 0.803 0 1.455-0.652 1.455-1.455v-1.453h2.909v20.362h2.909v-20.362c0-1.607-1.303-2.909-2.909-2.909zM7.273 26.182h2.909v-2.909h-2.909v2.909zM14.545 26.182v-2.909h-2.909v2.909h2.909zM16 26.182h2.909v-2.909h-2.909v2.909zM14.545 18.909h-7.273v2.909h7.273v-2.909zM18.909 18.909h-2.909v2.909h2.909v-2.909zM14.545 14.547h-7.273v2.908h7.273v-2.908zM18.909 14.547h-2.909v2.908h2.909v-2.908z"></path>
+			</svg>
+			<span>
+				Calendar
+			</span>
+		</li>
+		<li>
+			<svg id="olymp-badge-icon" viewBox="0 0 32 32" style="width: 1.67rem;fill: #999ebe;">
+				<title>badge-icon</title>
+				<path d="M25.6 16c0-5.302-4.299-9.6-9.6-9.6s-9.6 4.298-9.6 9.6c0 5.301 4.299 9.598 9.6 9.598s9.6-4.298 9.6-9.598zM9.6 16c0-3.534 2.866-6.4 6.4-6.4s6.4 2.867 6.4 6.4-2.866 6.402-6.4 6.402-6.4-2.867-6.4-6.402zM16 0c-8.837 0-16 7.163-16 16 0 7.163 4.709 13.227 11.2 15.266v-3.405c-4.69-1.899-8-6.491-8-11.861 0-7.069 5.731-12.8 12.8-12.8s12.8 5.731 12.8 12.8c0 5.37-3.31 9.962-8 11.861v3.405c6.491-2.038 11.2-8.102 11.2-15.266 0-8.837-7.165-16-16-16zM14.4 31.998h3.2v-3.198h-3.2v3.198z"></path>
+			</svg>
+			<span>
+				Badges
+			</span>
+		</li>
+		<li>
+			<svg id="olymp-cupcake-icon" viewBox="0 0 27 32" style="width: 1.67rem;fill: #999ebe;">
+				<title>cupcake-icon</title>
+				<path d="M5.349 32h3.984v-2.667h-1.671l-0.933-6.541 12.959-0.063 0.312-0.063h-15.979z"></path>
+				<path d="M20 22.667l-0.963 6.667h-1.704v2.667h4.016l1.339-9.333z"></path>
+				<path d="M25 12.908c-0.921-2.695-3.583-4.743-7.667-4.891v2.673c2.639 0.121 4.513 1.237 5.143 3.080 0.157 0.457 0.435 0.864 0.805 1.176 0.451 0.379 0.719 1.028 0.719 1.737 0 0.649-0.232 1.251-0.635 1.648-0.377 0.372-0.636 0.849-0.74 1.368-0.195 0.957-1.133 1.651-2.203 1.652-0.375-0.047-1.288-0.669-1.587-0.873-0.447-0.305-0.972-0.464-1.503-0.464-0.173 0-0.347 0.017-0.519 0.051-0.7 0.139-1.317 0.553-1.709 1.151-0.605 0.919-1.267 1.468-1.772 1.468-0.596 0-1.305-0.757-1.771-1.467-0.392-0.597-1.008-1.013-1.709-1.152-0.173-0.033-0.347-0.049-0.52-0.049-0.531 0-1.055 0.159-1.5 0.463-0.301 0.204-1.216 0.828-1.557 0.873-1.101 0-2.040-0.695-2.233-1.651-0.105-0.52-0.363-0.996-0.74-1.368-0.405-0.4-0.636-1-0.636-1.649 0-0.709 0.268-1.359 0.717-1.736 0.371-0.312 0.649-0.719 0.805-1.177 0.588-1.716 2.545-2.885 5.144-3.079v-2.675c-3.924 0.225-6.751 2.212-7.667 4.891-1.005 0.847-1.667 2.217-1.667 3.776 0 1.428 0.561 2.691 1.427 3.545 0.436 2.157 2.437 3.789 4.848 3.789 1.073 0 2.248-0.784 3.059-1.336 0.871 1.327 2.227 2.669 4 2.669s3.128-1.343 4-2.669c0.809 0.552 1.984 1.336 3.059 1.336 2.411 0 4.412-1.632 4.848-3.789 0.865-0.856 1.427-2.117 1.427-3.545 0-1.559-0.661-2.929-1.667-3.776z"></path>
+				<path d="M12 29.333h2.667v2.667h-2.667v-2.667z"></path>
+				<path d="M12 13.332h2.667v-8h-2.667v8zM13.333 0c-0.737 0-1.333 0.596-1.333 1.332v1.333c0 0.736 0.596 1.333 1.333 1.333s1.333-0.597 1.333-1.333v-1.333c0-0.736-0.596-1.332-1.333-1.332z"></path>
+			</svg>
+			<span>
+				Birthdays
+			</span>
+		</li>
+		<li>
+			<svg id="olymp-stats-icon" viewBox="0 0 32 32" style="width: 1.67rem;fill: #999ebe;">
+				<title>stats-icon</title>
+				<path d="M23.273 10.182h-2.909v1.236l-3.873 12.589-0.765-5.1h-2.941l1.761 11.745v1.347h2.909v-1.236l4.313-14.015 1.505 5.271v1.252h2.909v-2.909l-2.909-8.932v-1.249zM14.416 10.182l-1.325-8.836v-1.345h-2.909v1.233l-5.818 17.673h-4.364v2.912h7.273v-1.455l3.873-12.371 0.49 2.189h2.78zM29.091 20.364v2.909h2.909v-2.909h-2.909zM14.545 13.091h-2.909v2.908h2.909v-2.908z"></path>
+			</svg>
+			<span>
+				Starts
+			</span>
+		</li>
+		<li>
+			<svg id="olymp-manage-widgets-icon" viewBox="0 0 39 32" style="width: 1.67rem;fill: #999ebe;">
+				<title>manage-widgets-icon</title>
+				<path d="M0 3.554v24.891c0 1.963 1.593 3.556 3.556 3.556h14.222v-3.556h-14.222v-24.891h14.222v-3.556h-14.222c-1.963 0-3.556 1.593-3.556 3.556zM10.667 24.889v-17.778h-3.556v17.778h3.556zM14.222 24.889h3.556v-17.778h-3.556v17.778zM21.333 3.554h3.556v-3.556h-3.556v3.556zM28.444 3.554h3.556v-3.556h-3.556v3.556zM35.556-0.002v3.556h3.556v-3.556h-3.556zM35.556 10.665h3.556v-3.554h-3.556v3.554zM35.556 17.776h3.556v-3.556h-3.556v3.556zM35.556 24.889h3.556v-3.556h-3.556v3.556zM35.556 32h3.556v-3.556h-3.556v3.556zM28.444 32h3.556v-3.556h-3.556v3.556zM21.333 32h3.556v-3.556h-3.556v3.556z"></path>
+			</svg>
+			<span>
+				Widgets
+			</span>
+		</li>
 	</ul>
 
 	<!-- 右侧栏 -->
 	<ul class="column_right">
-		<li>avatar</li>
-		<li>avatar</li>
-		<li>avatar</li>
-		<li>avatar</li>
-		<li>avatar</li>
-		<li>avatar</li>
-		<li>avatar</li>
-		<li>avatar</li>
-		<li>avatar</li>
-		<li>avatar</li>
-		<li>avatar</li>
+		<li>
+			<!-- div 用来包裹 头像和状态 位置不会脱离，使其居中显示 -->
+			<div>
+				<!-- 好友们的头像 -->
+				<img src="image/home/avatar67-sm.jpg">
+
+				<!-- 小点，. 它的颜色用来判断我的好友们是否在线/状态 -->
+				<span></span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="image/home/avatar62-sm.jpg">
+				<span></span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="image/home/avatar68-sm.jpg">
+				<span></span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="image/home/avatar69-sm.jpg">
+				<span></span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="image/home/avatar70-sm.jpg">
+				<span></span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="image/home/avatar64-sm.jpg">
+				<span></span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="image/home/avatar71-sm.jpg">
+				<span></span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="image/home/avatar72-sm.jpg">
+				<span></span>
+			</div>
+		</li>
+		<li>
+			<div>
+				<img src="image/home/avatar63-sm.jpg">
+				<span></span>
+			</div>
+		</li>
 
 		<!-- 右侧底部固定块 -->
 		<div class="column_right_btn">
-			<span>菜单</span>
-			<span>消息</span>
+			<div>
+				<svg id="olymp-menu-icon" viewBox="0 0 41 32" style="width: 1.67rem;fill: #999ebe;">
+					<title>menu-icon</title>
+					<path d="M4.571 0h-4.571v4.571h4.571v-4.571zM9.143 0v4.571h32v-4.571h-32zM13.714 13.714h-13.714v4.571h13.714v-4.571zM18.286 13.714v4.571h4.571v-4.571h-4.571zM27.429 18.286h13.714v-4.571h-13.714v4.571zM0 32h32v-4.569h-32v4.569zM36.571 32h4.571v-4.569h-4.571v4.569z"></path>
+				</svg>
+			</div>
+			<div>
+				<svg id="olymp-chat---messages-icon" viewBox="0 0 40 32" style="width: 2rem;fill: #fff;">
+					<title>chat---messages-icon</title>
+					<path d="M24.381 7.621h-21.333c-1.378 0-3.048 1.606-3.048 3.046v13.716c0 1.443 1.67 3.048 3.048 3.048v4.57l12.19-4.568v-3.051l-9.143 3.051v-3.051h-3.048v-13.714h21.333v16.763c1.378 0 3.048-1.605 3.048-3.048v-13.716c0-1.44-1.67-3.046-3.048-3.046zM18.286 27.432h3.048v-3.048h-3.048v3.048zM6.095 16.763h15.238v-3.046h-15.238v3.046zM6.095 21.336h9.143v-3.048h-9.143v3.048zM15.238 3.051h24.381c0-1.443-1.67-3.049-3.048-3.049h-21.333c-1.378 0-3.048 1.606-3.048 3.049v1.527h3.048v-1.527zM36.571 16.763l-4.571-0.002v3.051l-3.048-1.016v3.301l6.095 2.284v-4.568c0.779 0 1.524 0 1.524 0 1.378 0 3.048-1.606 3.048-3.049v-4.571h-3.048v4.571zM36.571 9.144h3.048v-3.048h-3.048v3.048z"></path>
+				</svg>
+			</div>
 		</div>
 	</ul>
 
 	<!-- 版心主体部分 -->
+	<!-- 版心头部块 -->
 	<div class="body_banner">
-		<div class="body_banner_img">版图</div>
+		<div class="body_banner_img" style="position: relative;overflow: hidden;">
+			<img src="image/home/top-header1.jpg" style="width: 100%;height: 100%;">
+			<div style="display: inline-block;width: 100%;height: 30%;position: absolute;z-index: 2;left: 0;bottom: 0;background: linear-gradient(to top, rgba(0,0,0,.8), rgba(0,0,0,0));"></div>
+		</div>
 		<ul class="body_banner_item">
 			<li><a>Timeline</a></li>
 			<li><a>About</a></li>
 			<li><a>Friends</a></li>
 			<li>
-				<div class="body_banner_avatar">头像</div>
+				<div class="body_banner_avatar" style="z-index: 5;">
+					<img src="image/home/author-main1.jpg" style="width: 100%;height: 100%;border-radius: 50%;">
+				</div>
 				<div class="body_banner_role">
 					<span>Aladdin</span>
 					<span>China FuJian</span>
@@ -92,26 +323,272 @@
 			<li><a>Photos</a></li>
 			<li><a>Videos</a></li>
 			<li><a>...</a></li>
-			<ul class="body_banner_btn">
-				<li></li>
-				<li></li>
-				<li></li>
+			<ul class="body_banner_btn" style="z-index: 9;">
+				<li>
+					<svg id="olymp-happy-face-icon" viewBox="0 0 32 32" style="width: 1.8rem;fill: #fff;">
+						<title>happy-face-icon</title>
+						<path d="M16 0c-8.837 0-16 7.16-16 15.989 0 7.166 4.715 13.227 11.213 15.262v-3.39c-4.69-1.899-8-6.49-8-11.859 0-7.070 5.731-12.802 12.8-12.802s12.8 5.731 12.8 12.802c0 5.37-3.312 9.96-8 11.859v3.378c6.485-2.040 11.187-8.094 11.187-15.25 0-8.829-7.165-15.989-16-15.989zM11.211 12.8h-3.2v3.202h3.2v-3.202zM20.813 12.8v3.202h3.2v-3.202h-3.2zM11.198 19.365c0 1.675 2.146 3.032 4.794 3.032s4.794-1.357 4.794-3.032v-0.16h-9.587v0.16zM14.413 32.002h3.2v-3.2h-3.2v3.2z"></path>
+					</svg>
+				</li>
+				<li>
+					<svg id="olymp-chat---messages-icon" viewBox="0 0 40 32" style="width: 2rem;fill: #fff;">
+						<title>chat---messages-icon</title>
+						<path d="M24.381 7.621h-21.333c-1.378 0-3.048 1.606-3.048 3.046v13.716c0 1.443 1.67 3.048 3.048 3.048v4.57l12.19-4.568v-3.051l-9.143 3.051v-3.051h-3.048v-13.714h21.333v16.763c1.378 0 3.048-1.605 3.048-3.048v-13.716c0-1.44-1.67-3.046-3.048-3.046zM18.286 27.432h3.048v-3.048h-3.048v3.048zM6.095 16.763h15.238v-3.046h-15.238v3.046zM6.095 21.336h9.143v-3.048h-9.143v3.048zM15.238 3.051h24.381c0-1.443-1.67-3.049-3.048-3.049h-21.333c-1.378 0-3.048 1.606-3.048 3.049v1.527h3.048v-1.527zM36.571 16.763l-4.571-0.002v3.051l-3.048-1.016v3.301l6.095 2.284v-4.568c0.779 0 1.524 0 1.524 0 1.378 0 3.048-1.606 3.048-3.049v-4.571h-3.048v4.571zM36.571 9.144h3.048v-3.048h-3.048v3.048z"></path>
+					</svg>
+				</li>
+				<li>
+					<svg id="olymp-settings-icon" viewBox="0 0 32 32" style="width: 1.5rem;fill: #fff;">
+						<title>settings-icon</title>
+						<path d="M7.111 3.881v-3.881h-3.556v3.883c-2.068 0.734-3.556 2.686-3.556 5.006s1.488 4.272 3.556 5.006v10.994h3.556v-10.996c2.068-0.734 3.556-2.686 3.556-5.004s-1.488-4.272-3.556-5.008zM7.111 10.667h-3.556v-3.556h3.556v3.556zM28.444 3.881v-3.881h-3.556v3.883c-2.066 0.734-3.556 2.686-3.556 5.006s1.49 4.27 3.556 5.006v18.105h3.556v-18.107c2.066-0.734 3.556-2.686 3.556-5.004s-1.49-4.272-3.556-5.008zM28.444 10.667h-3.556v-3.556h3.556v3.556zM17.778 18.105v-18.105h-3.556v18.105c-2.068 0.734-3.556 2.686-3.556 5.006 0 2.318 1.488 4.27 3.556 5.006v3.883h3.556v-3.883c2.066-0.736 3.556-2.69 3.556-5.006 0-2.32-1.49-4.272-3.556-5.006zM17.778 24.887h-3.556v-3.554h3.556v3.554zM3.556 32h3.556v-3.556h-3.556v3.556z"></path>
+					</svg>
+				</li>
 			</ul>
 
 			<!-- 媒体查询...当屏幕宽度小于768px，显示版图下边栏部分 -->
 			<!-- Time/Avout/Friends... -->
-			<div class="body_banner_item2">
-				666
+			<div class="body_banner_item2" style="z-index: 9;">
+				<div class="item2_fonts"  style="width: 100%;">
+					<span>
+						<svg id="olymp-happy-face-icon" viewBox="0 0 32 32" style="width: 1.8rem;fill: #fff;">
+							<title>happy-face-icon</title>
+							<path d="M16 0c-8.837 0-16 7.16-16 15.989 0 7.166 4.715 13.227 11.213 15.262v-3.39c-4.69-1.899-8-6.49-8-11.859 0-7.070 5.731-12.802 12.8-12.802s12.8 5.731 12.8 12.802c0 5.37-3.312 9.96-8 11.859v3.378c6.485-2.040 11.187-8.094 11.187-15.25 0-8.829-7.165-15.989-16-15.989zM11.211 12.8h-3.2v3.202h3.2v-3.202zM20.813 12.8v3.202h3.2v-3.202h-3.2zM11.198 19.365c0 1.675 2.146 3.032 4.794 3.032s4.794-1.357 4.794-3.032v-0.16h-9.587v0.16zM14.413 32.002h3.2v-3.2h-3.2v3.2z"></path>
+						</svg>
+					</span>
+					<span>
+						<svg id="olymp-chat---messages-icon" viewBox="0 0 33 32" style="width: 2rem;fill: #fff;">
+							<title>chat---messages-icon</title>
+							<path d="M24.381 7.621h-21.333c-1.378 0-3.048 1.606-3.048 3.046v13.716c0 1.443 1.67 3.048 3.048 3.048v4.57l12.19-4.568v-3.051l-9.143 3.051v-3.051h-3.048v-13.714h21.333v16.763c1.378 0 3.048-1.605 3.048-3.048v-13.716c0-1.44-1.67-3.046-3.048-3.046zM18.286 27.432h3.048v-3.048h-3.048v3.048zM6.095 16.763h15.238v-3.046h-15.238v3.046zM6.095 21.336h9.143v-3.048h-9.143v3.048zM15.238 3.051h24.381c0-1.443-1.67-3.049-3.048-3.049h-21.333c-1.378 0-3.048 1.606-3.048 3.049v1.527h3.048v-1.527zM36.571 16.763l-4.571-0.002v3.051l-3.048-1.016v3.301l6.095 2.284v-4.568c0.779 0 1.524 0 1.524 0 1.378 0 3.048-1.606 3.048-3.049v-4.571h-3.048v4.571zM36.571 9.144h3.048v-3.048h-3.048v3.048z"></path>
+						</svg>
+					</span>
+					<span>
+						<svg id="olymp-settings-icon" viewBox="0 0 25 32" style="width: 1.5rem;fill: #fff;">
+							<title>settings-icon</title>
+							<path d="M7.111 3.881v-3.881h-3.556v3.883c-2.068 0.734-3.556 2.686-3.556 5.006s1.488 4.272 3.556 5.006v10.994h3.556v-10.996c2.068-0.734 3.556-2.686 3.556-5.004s-1.488-4.272-3.556-5.008zM7.111 10.667h-3.556v-3.556h3.556v3.556zM28.444 3.881v-3.881h-3.556v3.883c-2.066 0.734-3.556 2.686-3.556 5.006s1.49 4.27 3.556 5.006v18.105h3.556v-18.107c2.066-0.734 3.556-2.686 3.556-5.004s-1.49-4.272-3.556-5.008zM28.444 10.667h-3.556v-3.556h3.556v3.556zM17.778 18.105v-18.105h-3.556v18.105c-2.068 0.734-3.556 2.686-3.556 5.006 0 2.318 1.488 4.27 3.556 5.006v3.883h3.556v-3.883c2.066-0.736 3.556-2.69 3.556-5.006 0-2.32-1.49-4.272-3.556-5.006zM17.778 24.887h-3.556v-3.554h3.556v3.554zM3.556 32h3.556v-3.556h-3.556v3.556z"></path>
+						</svg>
+					</span>
+				</div>
+				
+				<div class="item2_infos">
+					<div id="item2_infos_nu1">
+						<span>TimeLine</span>
+						<span>About</span>
+						<span>Friend</span>
+					</div>
+					<div id="item2_infos_nu2">
+						<span>Photos</span>
+						<span>Videos</span>
+						<span>...</span>
+					</div>
+				</div>
 			</div>
 			<!-- 头像 -->
 			<div class="body_item2_img2">
-				<div class="body_banner_avatar2">头像</div>
+				<div class="body_banner_avatar2">
+					<img src="image/home/author-main1.jpg" style="width: 100%;height: 100%;border-radius: 50%;">
+				</div>
 				<div class="body_banner_role2">
 					<span>Aladdin</span>
 					<span>China FuJian</span>
 				</div>
 			</div>
 		</ul>
+	</div>
+
+	<!-- 版心内容块 -->
+	<div class="body_banner_content">
+		<!-- 西部 -->
+		<div class="West">
+			<!-- 简介 -->
+			<div class="part1">
+				<div class="part1_title">Profile intro</div>
+				<div class="part1_content">
+					<!-- 关于我 -->
+					<div class="me">
+						<div>About me：</div>
+						<div>Hi,I am Jame,I am 36 and I work as a Digital for the "Daydreams" Agency in Pier 56.</div>
+					</div>
+					<!-- 最喜爱的电视节目 -->
+					<div class="TV">
+						<div>Favourite TV Show：</div>
+						<div>Breaking Good,ReadDevil,People of Interest,The Running Dead,Found,American Guy.</div>
+					</div>
+					<!-- 最喜爱的音乐或者文章 -->
+					<div class="Artists">
+						<div>Favourite Music Bands/Artists：</div>
+						<div>Iron Maid,DC/AC,Megablow,The Ill,Kung Fihters,System of a Revenge.</div>
+					</div>
+					<!-- 友情链接 -->
+					<div class="Networks">
+						<div>Other Social Networks：</div>
+						<ul>
+							<li>
+								<span>
+									<svg class="svg-inline--fa fa-facebook-f fa-w-9" aria-hidden="true" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 480" data-fa-i2svg=""><path fill="currentColor" d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229"></path></svg>
+								</span>
+								Facebook
+							</li>
+							<li>
+								<svg class="svg-inline--fa fa-twitter fa-w-16" aria-hidden="true" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+								Twitter
+							</li>
+							<li>
+								<svg class="svg-inline--fa fa-dribbble fa-w-16" aria-hidden="true" data-prefix="fab" data-icon="dribbble" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.252 8 8 119.252 8 256s111.252 248 248 248 248-111.252 248-248S392.748 8 256 8zm163.97 114.366c29.503 36.046 47.369 81.957 47.835 131.955-6.984-1.477-77.018-15.682-147.502-6.818-5.752-14.041-11.181-26.393-18.617-41.614 78.321-31.977 113.818-77.482 118.284-83.523zM396.421 97.87c-3.81 5.427-35.697 48.286-111.021 76.519-34.712-63.776-73.185-116.168-79.04-124.008 67.176-16.193 137.966 1.27 190.061 47.489zm-230.48-33.25c5.585 7.659 43.438 60.116 78.537 122.509-99.087 26.313-186.36 25.934-195.834 25.809C62.38 147.205 106.678 92.573 165.941 64.62zM44.17 256.323c0-2.166.043-4.322.108-6.473 9.268.19 111.92 1.513 217.706-30.146 6.064 11.868 11.857 23.915 17.174 35.949-76.599 21.575-146.194 83.527-180.531 142.306C64.794 360.405 44.17 310.73 44.17 256.323zm81.807 167.113c22.127-45.233 82.178-103.622 167.579-132.756 29.74 77.283 42.039 142.053 45.189 160.638-68.112 29.013-150.015 21.053-212.768-27.882zm248.38 8.489c-2.171-12.886-13.446-74.897-41.152-151.033 66.38-10.626 124.7 6.768 131.947 9.055-9.442 58.941-43.273 109.844-90.795 141.978z"></path></svg>
+								Dribbble
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 徽章 -->
+			<div class="part2">
+				<div class="part2_title">Jame's Badges</div>
+				<div class="part2_content">
+					<span><img src="image/home/badge1.png"></span>
+					<span><img src="image/home/badge4.png"></span>
+					<span><img src="image/home/badge3.png"></span>
+					<span><img src="image/home/badge6.png"></span>
+					<span><img src="image/home/badge11.png"></span>
+					<span><img src="image/home/badge8.png"></span>
+					<span><img src="image/home/badge10.png"></span>
+					<span><img src="image/home/badge13.png"></span>
+					<span><img src="image/home/badge7.png"></span>
+					<span><img src="image/home/badge12.png"></span>
+				</div>
+			</div>
+			<!-- 播放列表 -->
+			<div class="part3">
+				<div class="part3_title">My Spotify PlayList</div>
+				<div class="part3_content">
+					<!-- <div>
+						<span class="part3_content_avatar">
+							<img src="image/home/playlist6.jpg">
+						</span>
+						<span class="part3_content_name">
+							<span>The Past Start Slow</span>
+							<span>System of a Revenage2222</span>
+						</span>
+						<span class="part3_content_time">15:42</span>
+					</div> -->
+				    <div>
+					<span class="part3_content_avatar">
+						<img src="image/home/playlist7.jpg">
+					</span>
+					<span class="part3_content_name">
+						<span>The Pretender</span>
+						<span>Kung Fighters</span>
+					</span>
+					<span class="part3_content_time">3:22</span>
+				</div>
+				<div>
+					<span class="part3_content_avatar">
+						<img src="image/home/playlist8.jpg">
+					</span>
+					<span class="part3_content_name">
+						<span>Seven Nation Army</span>
+						<span>The Black Stripes</span>
+					</span>
+					<span class="part3_content_time">3:06</span>
+				</div>
+				<div>
+					<span class="part3_content_avatar">
+						<img src="image/home/playlist9.jpg">
+					</span>
+					<span class="part3_content_name">
+						<span>Leap of Faith</span>
+						<span>Eden Artifact</span>
+					</span>
+					<span class="part3_content_time">6:17</span>
+				</div>
+				<div>
+					<span class="part3_content_avatar">
+						<img src="image/home/playlist10.jpg">
+					</span>
+					<span class="part3_content_name">
+						<span>Killer Queen</span>
+						<span>Archiduke</span>
+					</span>
+					<span class="part3_content_time">5:40</span>
+				</div>
+				</div>
+			</div>
+			<!-- 推特订阅 -->
+			<div class="part4">
+				<div class="part4_title">Twitter Feed</div>
+				<div class="part4_content">
+					<div class="feed1">
+						<!-- 订阅头像/昵称 -->
+						<div style="display: flex;">
+							<span class="fee1_img">
+								<img src="image/home/twitter-avatar1.png" style="width: 100%;">
+							</span>
+							<div class="feed1_name">
+								<span>Space Cowboy</span>
+								<span>@james_spiegelOK</span>
+							</div>
+						</div>
+						<!-- 订阅内容 -->
+						<div class="feed1_content">Tomorrow with the agency we will run 5 km for charity. Come and give us your support! #Daydream5K</div>
+						<div class="feed1_time">16 hours ago</div>
+					</div>
+					<div class="feed1">
+						<!-- 订阅头像/昵称 -->
+						<div style="display: flex;">
+							<span class="fee1_img">
+								<img src="image/home/twitter-avatar1.png" style="width: 100%;">
+							</span>
+							<div class="feed1_name">
+								<span>Space Cowboy</span>
+								<span>@james_spiegelOK</span>
+							</div>
+						</div>
+						<!-- 订阅内容 -->
+						<div class="feed1_content">Tomorrow with the agency we will run 5 km for charity. Come and give us your support! #Daydream5K</div>
+						<div class="feed1_time">16 hours ago</div>
+					</div>
+					<div class="feed1">
+						<!-- 订阅头像/昵称 -->
+						<div style="display: flex;">
+							<span class="fee1_img">
+								<img src="image/home/twitter-avatar1.png" style="width: 100%;">
+							</span>
+							<div class="feed1_name">
+								<span>Space Cowboy</span>
+								<span>@james_spiegelOK</span>
+							</div>
+						</div>
+						<!-- 订阅内容 -->
+						<div class="feed1_content">Tomorrow with the agency we will run 5 km for charity. Come and give us your support! #Daydream5K</div>
+						<div class="feed1_time">16 hours ago</div>
+					</div>
+				</div>
+			</div>
+			<!-- 最新视频 -->
+			<div class="part5">
+				<div class="part4_title">Last Video</div>
+				<div class="part4_video">
+					<div class="part4_video_id">
+						<img src="image/home/video8.jpg">
+						<div class="video_info">
+							<span>System of a Revenge-Hypnotize...</span>
+							<span>3:25</span>
+						</div>
+					</div>
+					<div class="part4_video_id">
+						<img src="image/home/video7.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 中部 -->
+		<div style="flex: 2.28;padding: 0 2.5rem;">
+			<div style="display:flex;width: 100%;height:100%;background-color: #fff;">
+				
+			</div>
+		</div>
+		<!-- 东部 -->
+		<div style="flex: 1;background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);">3
+		</div>
 	</div>
 
 </body>
