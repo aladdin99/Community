@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="less/base.css">
 	<link rel="stylesheet" type="text/css" href="less/home.css">
 	<script type="text/javascript" src="frame/jquery.js"></script>
+	<script type="text/javascript" src="frame/vue.js"></script>
 	<script type="text/javascript" src="frame/bootstrap/js/bootstrap.js"></script>
 </head>
 <body>
@@ -395,7 +396,7 @@
 	</div>
 
 	<!-- 版心内容块 -->
-	<div class="body_banner_content">
+	<div id="app" class="body_banner_content">
 		<!-- 西部 -->
 		<div class="West">
 			<!-- 简介 -->
@@ -404,18 +405,18 @@
 				<div class="part1_content">
 					<!-- 关于我 -->
 					<div class="me">
-						<div>About me：</div>
-						<div>Hi,I am Jame,I am 36 and I work as a Digital for the "Daydreams" Agency in Pier 56.</div>
+						<div>{{ part1_content[0].me.name }}</div>
+						<div>{{ part1_content[0].me.content }}</div>
 					</div>
 					<!-- 最喜爱的电视节目 -->
 					<div class="TV">
-						<div>Favourite TV Show：</div>
-						<div>Breaking Good,ReadDevil,People of Interest,The Running Dead,Found,American Guy.</div>
+						<div>{{ part1_content[1].tv.name }}</div>
+						<div>{{ part1_content[1].tv.content }}</div>
 					</div>
 					<!-- 最喜爱的音乐或者文章 -->
 					<div class="Artists">
-						<div>Favourite Music Bands/Artists：</div>
-						<div>Iron Maid,DC/AC,Megablow,The Ill,Kung Fihters,System of a Revenge.</div>
+						<div>{{ part1_content[2].artists.name }}</div>
+						<div>{{ part1_content[2].artists.content }}</div>
 					</div>
 					<!-- 友情链接 -->
 					<div class="Networks">
@@ -443,26 +444,17 @@
 			<div class="part2">
 				<div class="part2_title">Jame's Badges</div>
 				<div class="part2_content">
-					<span><img src="image/home/badge1.png"></span>
-					<span><img src="image/home/badge4.png"></span>
-					<span><img src="image/home/badge3.png"></span>
-					<span><img src="image/home/badge6.png"></span>
-					<span><img src="image/home/badge11.png"></span>
-					<span><img src="image/home/badge8.png"></span>
-					<span><img src="image/home/badge10.png"></span>
-					<span><img src="image/home/badge13.png"></span>
-					<span><img src="image/home/badge7.png"></span>
-					<span><img src="image/home/badge12.png"></span>
+					<span v-for="(item,index) in part2_content"><img :src=item.order></span>
 				</div>
 			</div>
 			<!-- 播放列表 -->
 			<div class="part3">
 				<div class="part3_title">My Spotify PlayList</div>
 				<div class="part3_content">
-					<div>
+					<div v-for="(item,index) in part3_content">
 						<!-- 歌曲的预览图 -->
 						<span class="part3_content_avatar">
-							<img src="image/home/playlist6.jpg">
+							<img :src=item.image>
 							<span class="avatar_bg">
 								<svg id="olymp-play-icon" viewBox="0 0 28 32">
 									<title>play-icon</title>
@@ -473,11 +465,11 @@
 						</span>
 						<!-- 歌手/歌名 -->
 						<span class="part3_content_name">
-							<span>The Past Start Slow</span>
-							<span>System of a Revenage2222</span>
+							<span>{{ item.name }}</span>
+							<span>{{ item.song }}</span>
 						</span>
 						<!-- 显示时长 -->
-						<span class="part3_content_time">15:42</span>
+						<span class="part3_content_time">{{ item.time }}</span>
 						<!-- 查看更多 -->
 						<span class="part3_content_dot">
 							<span class="dot">
@@ -493,147 +485,17 @@
 							<span>Add Playlist To Player</span>
 						</div>
 					</div>
-				    <div>
-						<span class="part3_content_avatar">
-							<img src="image/home/playlist7.jpg">
-							<span class="avatar_bg">
-								<svg id="olymp-play-icon" viewBox="0 0 28 32">
-									<title>play-icon</title>
-									<path d="M24.71 10.664l-15.614-9.574c-1.146-0.698-2.312-1.048-3.478-1.048-2.792 0-5.618 2.188-5.618 6.368v5.59h4c0-4.784 0-5.592 0-5.592 0-1.498 0.628-2.368 1.618-2.368 0.408 0 0.876 0.148 1.388 0.458l15.63 9.584c1.758 1.066 1.848 2.812 0.088 3.878l-15.718 9.58c-0.512 0.314-0.982 0.46-1.39 0.46-0.988 0-1.616-0.868-1.616-2.364 0 0 0-0.6 0-1.586 0-0.012 0-0.036 0-0.048h-4v1.634c0 4.178 2.826 6.364 5.616 6.364 1.166 0 2.334-0.35 3.47-1.042l15.72-9.58c2.026-1.23 3.194-3.164 3.194-5.302 0.002-2.172-1.198-4.144-3.29-5.412z"></path>
-									<path d="M0 16h4v4h-4v-4z"></path>
-								</svg>
-							</span>
-						</span>
-						<span class="part3_content_name">
-							<span>The Pretender</span>
-							<span>Kung Fighters</span>
-						</span>
-						<span class="part3_content_time">3:22</span>
-						<span class="part3_content_dot">
-							<span class="dot">
-								<svg id="olymp-three-dots-icon" viewBox="0 0 128 32">
-									<title>three-dots-icon</title>
-									<path d="M112-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM64-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM16-0.008c-8.832 0-16 7.16-16 16s7.168 15.992 16 15.992 16-7.16 16-15.992c0-8.84-7.16-16-16-16z"></path>
-								</svg>
-							</span>
-						</span>
-					</div>
-					<div>
-						<span class="part3_content_avatar">
-							<img src="image/home/playlist8.jpg">
-							<span class="avatar_bg">
-								<svg id="olymp-play-icon" viewBox="0 0 28 32">
-									<title>play-icon</title>
-									<path d="M24.71 10.664l-15.614-9.574c-1.146-0.698-2.312-1.048-3.478-1.048-2.792 0-5.618 2.188-5.618 6.368v5.59h4c0-4.784 0-5.592 0-5.592 0-1.498 0.628-2.368 1.618-2.368 0.408 0 0.876 0.148 1.388 0.458l15.63 9.584c1.758 1.066 1.848 2.812 0.088 3.878l-15.718 9.58c-0.512 0.314-0.982 0.46-1.39 0.46-0.988 0-1.616-0.868-1.616-2.364 0 0 0-0.6 0-1.586 0-0.012 0-0.036 0-0.048h-4v1.634c0 4.178 2.826 6.364 5.616 6.364 1.166 0 2.334-0.35 3.47-1.042l15.72-9.58c2.026-1.23 3.194-3.164 3.194-5.302 0.002-2.172-1.198-4.144-3.29-5.412z"></path>
-									<path d="M0 16h4v4h-4v-4z"></path>
-								</svg>
-							</span>
-						</span>
-						<span class="part3_content_name">
-							<span>Seven Nation Army</span>
-							<span>The Black Stripes</span>
-						</span>
-						<span class="part3_content_time">3:06</span>
-						<span class="part3_content_dot">
-							<span class="dot">
-								<svg id="olymp-three-dots-icon" viewBox="0 0 128 32">
-									<title>three-dots-icon</title>
-									<path d="M112-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM64-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM16-0.008c-8.832 0-16 7.16-16 16s7.168 15.992 16 15.992 16-7.16 16-15.992c0-8.84-7.16-16-16-16z"></path>
-								</svg>
-							</span>
-						</span>
-					</div>
-					<div>
-						<span class="part3_content_avatar">
-							<img src="image/home/playlist9.jpg">
-							<span class="avatar_bg">
-								<svg id="olymp-play-icon" viewBox="0 0 28 32">
-									<title>play-icon</title>
-									<path d="M24.71 10.664l-15.614-9.574c-1.146-0.698-2.312-1.048-3.478-1.048-2.792 0-5.618 2.188-5.618 6.368v5.59h4c0-4.784 0-5.592 0-5.592 0-1.498 0.628-2.368 1.618-2.368 0.408 0 0.876 0.148 1.388 0.458l15.63 9.584c1.758 1.066 1.848 2.812 0.088 3.878l-15.718 9.58c-0.512 0.314-0.982 0.46-1.39 0.46-0.988 0-1.616-0.868-1.616-2.364 0 0 0-0.6 0-1.586 0-0.012 0-0.036 0-0.048h-4v1.634c0 4.178 2.826 6.364 5.616 6.364 1.166 0 2.334-0.35 3.47-1.042l15.72-9.58c2.026-1.23 3.194-3.164 3.194-5.302 0.002-2.172-1.198-4.144-3.29-5.412z"></path>
-									<path d="M0 16h4v4h-4v-4z"></path>
-								</svg>
-							</span>
-						</span>
-						<span class="part3_content_name">
-							<span>Leap of Faith</span>
-							<span>Eden Artifact</span>
-						</span>
-						<span class="part3_content_time">6:17</span>
-						<span class="part3_content_dot">
-							<span class="dot">
-								<svg id="olymp-three-dots-icon" viewBox="0 0 128 32">
-									<title>three-dots-icon</title>
-									<path d="M112-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM64-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM16-0.008c-8.832 0-16 7.16-16 16s7.168 15.992 16 15.992 16-7.16 16-15.992c0-8.84-7.16-16-16-16z"></path>
-								</svg>
-							</span>
-						</span>
-					</div>
-					<div>
-						<span class="part3_content_avatar">
-							<img src="image/home/playlist10.jpg">
-							<span class="avatar_bg">
-								<svg id="olymp-play-icon" viewBox="0 0 28 32">
-									<title>play-icon</title>
-									<path d="M24.71 10.664l-15.614-9.574c-1.146-0.698-2.312-1.048-3.478-1.048-2.792 0-5.618 2.188-5.618 6.368v5.59h4c0-4.784 0-5.592 0-5.592 0-1.498 0.628-2.368 1.618-2.368 0.408 0 0.876 0.148 1.388 0.458l15.63 9.584c1.758 1.066 1.848 2.812 0.088 3.878l-15.718 9.58c-0.512 0.314-0.982 0.46-1.39 0.46-0.988 0-1.616-0.868-1.616-2.364 0 0 0-0.6 0-1.586 0-0.012 0-0.036 0-0.048h-4v1.634c0 4.178 2.826 6.364 5.616 6.364 1.166 0 2.334-0.35 3.47-1.042l15.72-9.58c2.026-1.23 3.194-3.164 3.194-5.302 0.002-2.172-1.198-4.144-3.29-5.412z"></path>
-									<path d="M0 16h4v4h-4v-4z"></path>
-								</svg>
-							</span>
-						</span>
-						<span class="part3_content_name">
-							<span>Killer Queen</span>
-							<span>Archiduke</span>
-						</span>
-						<span class="part3_content_time">5:40</span>
-						<span class="part3_content_dot">
-							<span class="dot">
-								<svg id="olymp-three-dots-icon" viewBox="0 0 128 32">
-									<title>three-dots-icon</title>
-									<path d="M112-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM64-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM16-0.008c-8.832 0-16 7.16-16 16s7.168 15.992 16 15.992 16-7.16 16-15.992c0-8.84-7.16-16-16-16z"></path>
-								</svg>
-							</span>
-						</span>
-					</div>
 				</div>
 			</div>
 			<!-- 推特订阅 -->
 			<div class="part4">
 				<div class="part4_title">Twitter Feed</div>
 				<div class="part4_content">
-					<div class="feed1">
+					<div class="feed1" v-for="(item,index) in twitter">
 						<!-- 订阅头像/昵称 -->
 						<div style="display: flex;">
 							<span class="fee1_img">
-								<img src="image/home/twitter-avatar1.png" style="width: 100%;">
-							</span>
-							<div class="feed1_name">
-								<span>Space Cowboy</span>
-								<span>@james_spiegelOK</span>
-							</div>
-						</div>
-						<!-- 订阅内容 -->
-						<div class="feed1_content">Tomorrow with the agency we will run 5 km for charity. Come and give us your support! #Daydream5K</div>
-						<div class="feed1_time">16 hours ago</div>
-					</div>
-					<div class="feed1">
-						<!-- 订阅头像/昵称 -->
-						<div style="display: flex;">
-							<span class="fee1_img">
-								<img src="image/home/twitter-avatar1.png" style="width: 100%;">
-							</span>
-							<div class="feed1_name">
-								<span>Space Cowboy</span>
-								<span>@james_spiegelOK</span>
-							</div>
-						</div>
-						<!-- 订阅内容 -->
-						<div class="feed1_content">Tomorrow with the agency we will run 5 km for charity. Come and give us your support! #Daydream5K</div>
-						<div class="feed1_time">16 hours ago</div>
-					</div>
-					<div class="feed1">
-						<!-- 订阅头像/昵称 -->
-						<div style="display: flex;">
-							<span class="fee1_img">
-								<img src="image/home/twitter-avatar1.png" style="width: 100%;">
+								<img :src=item.img style="width: 100%;">
 							</span>
 							<div class="feed1_name">
 								<span>Space Cowboy</span>
@@ -650,29 +512,11 @@
 			<div class="part5">
 				<div class="part4_title">Last Video</div>
 				<div class="part4_video">
-					<div class="part4_video_id">
-						<img src="image/home/video8.jpg">
+					<div class="part4_video_id" v-for="item in Last_video">
+						<img :src=item.img>
 						<div class="video_info">
-							<span>System of a Revenge-Hypnotize...</span>
-							<span>3:25</span>
-						</div>
-						<div
-						class="video_font">
-							<span>
-								<svg id="olymp-play-icon" viewBox="0 0 28 32" style="width: 1.67rem;fill: #fff;margin-left: .4rem;">
-									<title>play-icon</title>
-									<path d="M24.71 10.664l-15.614-9.574c-1.146-0.698-2.312-1.048-3.478-1.048-2.792 0-5.618 2.188-5.618 6.368v5.59h4c0-4.784 0-5.592 0-5.592 0-1.498 0.628-2.368 1.618-2.368 0.408 0 0.876 0.148 1.388 0.458l15.63 9.584c1.758 1.066 1.848 2.812 0.088 3.878l-15.718 9.58c-0.512 0.314-0.982 0.46-1.39 0.46-0.988 0-1.616-0.868-1.616-2.364 0 0 0-0.6 0-1.586 0-0.012 0-0.036 0-0.048h-4v1.634c0 4.178 2.826 6.364 5.616 6.364 1.166 0 2.334-0.35 3.47-1.042l15.72-9.58c2.026-1.23 3.194-3.164 3.194-5.302 0.002-2.172-1.198-4.144-3.29-5.412z"></path>
-									<path d="M0 16h4v4h-4v-4z"></path>
-								</svg>
-							</span>
-						</div>
-						<div class="video_bg"></div>
-					</div>
-					<div class="part4_video_id">
-						<img src="image/home/video7.jpg">
-						<div class="video_info">
-							<span>System of a Revenge-Hypnotize...</span>
-							<span>3:25</span>
+							<span>{{ item.content }}</span>
+							<span>{{ item.time }}</span>
 						</div>
 						<div
 						class="video_font">
@@ -1102,22 +946,21 @@
 					<!-- content栏 -->
 					<div class="repeat_content">
 						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
-					</div>
 
-					<!-- handle栏 -->
-				<div class="repeat_handle">
-					<div class="repeat_handle_mid">
-						<!-- 喜欢的人数 -->
-						<span class="likes">
-							<svg id="olymp-heart-icon" viewBox="0 0 36 32">
-								<title>heart-icon</title>
-								<path d="M23.111 21.333h3.556v3.556h-3.556v-3.556z"></path>
-								<path d="M32.512 2.997c-2.014-2.011-4.263-3.006-7.006-3.006-2.62 0-5.545 2.089-7.728 4.304-2.254-2.217-5.086-4.295-7.797-4.295-2.652 0-4.99 0.793-6.937 2.738-4.057 4.043-4.057 10.599 0 14.647 1.157 1.157 12.402 13.657 12.402 13.657 0.64 0.638 1.481 0.958 2.32 0.958s1.678-0.32 2.318-0.958l1.863-2.012-2.523-2.507-1.655 1.787c-2.078-2.311-11.095-12.324-12.213-13.442-1.291-1.285-2-2.994-2-4.811 0-1.813 0.709-3.518 2-4.804 1.177-1.175 2.54-1.698 4.425-1.698 0.464 0 2.215 0.236 5.303 3.273l2.533 2.492 2.492-2.532c2.208-2.242 4.201-3.244 5.196-3.244 1.769 0 3.113 0.588 4.496 1.97 1.289 1.284 1.998 2.99 1.998 4.804 0 1.815-0.709 3.522-1.966 4.775-0.087 0.085-0.098 0.094-1.9 2.041l-0.156 0.167 2.523 2.51 0.24-0.26c0 0 1.742-1.881 1.774-1.911 4.055-4.043 4.055-10.603-0.002-14.644z"></path>
-							</svg>
-							<span>18</span>
-						</span>
+						<div class="repeat_handle_mid" style="background-color: pink;">
+							<!-- 喜欢的人数 -->
+							<span class="likes">
+								<svg id="olymp-heart-icon" viewBox="0 0 36 32" style="width: 1.75rem;
+								fill: #c2c5d9;
+								margin-top: .5rem;">
+									<title>heart-icon</title>
+									<path d="M23.111 21.333h3.556v3.556h-3.556v-3.556z"></path>
+									<path d="M32.512 2.997c-2.014-2.011-4.263-3.006-7.006-3.006-2.62 0-5.545 2.089-7.728 4.304-2.254-2.217-5.086-4.295-7.797-4.295-2.652 0-4.99 0.793-6.937 2.738-4.057 4.043-4.057 10.599 0 14.647 1.157 1.157 12.402 13.657 12.402 13.657 0.64 0.638 1.481 0.958 2.32 0.958s1.678-0.32 2.318-0.958l1.863-2.012-2.523-2.507-1.655 1.787c-2.078-2.311-11.095-12.324-12.213-13.442-1.291-1.285-2-2.994-2-4.811 0-1.813 0.709-3.518 2-4.804 1.177-1.175 2.54-1.698 4.425-1.698 0.464 0 2.215 0.236 5.303 3.273l2.533 2.492 2.492-2.532c2.208-2.242 4.201-3.244 5.196-3.244 1.769 0 3.113 0.588 4.496 1.97 1.289 1.284 1.998 2.99 1.998 4.804 0 1.815-0.709 3.522-1.966 4.775-0.087 0.085-0.098 0.094-1.9 2.041l-0.156 0.167 2.523 2.51 0.24-0.26c0 0 1.742-1.881 1.774-1.911 4.055-4.043 4.055-10.603-0.002-14.644z"></path>
+								</svg>
+								<span>18 {{ amo }} </span>
+							</span>
+						</div>
 					</div>
-				</div>
 				</div>
 
 			</div>
@@ -1128,5 +971,10 @@
 		</div>
 	</div>
 
+
+	<script type="text/javascript" src="js/home.js"></script>
+	<script type="text/javascript">
+		
+	</script>	
 </body>
 </html>
