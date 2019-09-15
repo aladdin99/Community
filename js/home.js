@@ -1,7 +1,6 @@
 var vm = new Vue({
     el: "#app",
     data: {
-        amo: 666,
         // 西部-->简介
         part1_content: [
         	{ me: {
