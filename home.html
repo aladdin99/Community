@@ -597,22 +597,10 @@
 							</svg>
 							<span>{{ item.article.fav }}</span>
 						</span>
-						<!-- 点赞人数 -->
+						<!-- 点赞人数头像 -->
 						<ul class="avatar">
-							<li>
-								<img src="image/home/friend-harmonic7.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic8.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic9.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic10.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic11.jpg">
+							<li v-for="index in item.article.avatar">
+								<img :src=index.order>
 							</li>
 						</ul>
 						<!-- 更多人喜欢 -->
@@ -768,7 +756,7 @@
 				<!-- 查看更多评论 -->
 				<transition name="fade">
 					<div v-if="item.article.flag">
-						<div class="view-more" v-on:click="repeat_show = !repeat_show">
+						<div class="view-more" v-on:click="repeat_show = !repeat_show" v-if="item.article.comment.length>0">
 							View more comments <span>+</span>
 						</div>
 
@@ -800,55 +788,31 @@
 		
 		<!-- 东部 -->
 		<div class="East">
-			<!-- 最新相片 -->
+			<!-- 最新图片 -->
 			<div class="last_photos">
 				<span class="title">Last Photos</span>
 				<ul class="content">
-					<li><img src="image/home/last-photo10-large.jpg"></li>
-					<li><img src="image/home/last-phot11-large.jpg"></li>
-					<li><img src="image/home/last-phot12-large.jpg"></li>
-					<li><img src="image/home/last-phot13-large.jpg"></li>
-					<li><img src="image/home/last-phot14-large.jpg"></li>
-					<li><img src="image/home/last-phot15-large.jpg"></li>
-					<li><img src="image/home/last-phot16-large.jpg"></li>
-					<li><img src="image/home/last-phot17-large.jpg"></li>
-					<li><img src="image/home/last-phot18-large.jpg"></li>
+					<li v-for="(item,index) in last_photos"><img :src=item.order></li>
 				</ul>
-			</div><!-- margin-top: 1.42rem; -->
+			</div>
 
 			<!-- 博客文章 -->
 			<div class="blog_posts">
 				<span class="title">Blog Posts</span>
 				<!-- 遍历博客文章 -->
-				<!-- 文章1 -->
-				<div class="post">
+				<!-- 文章 -->
+				<div class="post" v-for="item in blog_posts">
 					<!-- 文章标题 -->
 					<div class="post_name">
-						My Perfect Vacations in South America and Europe
+						{{ item.name }}
 					</div>
 					<!-- 文章内容 -->
 					<div class="post_content">
-						Lorem ipsum dolor sit amet, consect adipisicing elit, sed do eiusmod por incidid ut labore et.
+						{{ item.content }}
 					</div>
 					<!-- 文章创建时间 -->
 					<div class="post_time">
-						7 hours ago
-					</div>
-				</div>
-
-				<!-- 文章2 -->
-				<div class="post">
-					<!-- 文章标题 -->
-					<div class="post_name">
-						The Big Experience of Travelling Alone
-					</div>
-					<!-- 文章内容 -->
-					<div class="post_content">
-						Lorem ipsum dolor sit amet, consect adipisicing elit, sed do eiusmod por incidid ut labore et.
-					</div>
-					<!-- 文章创建时间 -->
-					<div class="post_time">
-						March 18th, at 6:52pm
+						{{ item.time }}
 					</div>
 				</div>
 			</div>
@@ -857,22 +821,10 @@
 			<div class="friends">
 				<span class="title">Friends(86)</span>
 				<ul>
-					<li><img src="image/home/avatar24-sm.jpg"></li>
-					<li><img src="image/home/avatar25-sm.jpg"></li>
-					<li><img src="image/home/avatar26-sm.jpg"></li>
-					<li><img src="image/home/avatar27-sm.jpg"></li>
-					<li><img src="image/home/avatar28-sm.jpg"></li>
-					<li><img src="image/home/avatar29-sm.jpg"></li>
-					<li><img src="image/home/avatar30-sm.jpg"></li>
-					<li><img src="image/home/avatar31-sm.jpg"></li>
-					<li><img src="image/home/avatar32-sm.jpg"></li>
-					<li><img src="image/home/avatar33-sm.jpg"></li>
-					<li><img src="image/home/avatar34-sm.jpg"></li>
-					<li><img src="image/home/avatar35-sm.jpg"></li>
-					<li><img src="image/home/avatar36-sm.jpg"></li>
-					<li><img src="image/home/avatar37-sm.jpg"></li>
-					<li><img src="image/home/avatar38-sm.jpg"></li>
-					<li>+74</li>
+					<!-- 遍历朋友头像 -->
+					<li v-for="item in friends"><img :src=item.order></li>
+					<!-- 朋友的数量 -->
+					<li>+{{friends.length}}</li>
 				</ul>
 			</div>
 
@@ -880,98 +832,13 @@
 			<div class="Favourite">
 				<span class="title">Favourite Pages</span>
 				<ul>
-					<li>
+					<li v-for="item in Favourite">
 						<span class="font">
-							<img src="image/home/avatar43-sm.jpg">
+							<img :src=item.img>
 						</span>
 						<div class="page">
-							<span>The Marina Bar</span>
-							<span>Restaurant / Bar</span>
-							<!-- 收藏图标 -->
-							<span class="fav">
-								<svg id="olymp-star-icon" viewBox="0 0 32 32">
-									<title>star-icon</title>
-									<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
-									<path d="M31.88 11.91c-0.275-0.826-0.984-1.43-1.837-1.562l-8.309-1.28-3.611-7.763c-0.379-0.816-1.194-1.336-2.090-1.336-0.893 0-1.707 0.522-2.086 1.336l-3.613 7.763-8.309 1.28c-0.854 0.131-1.563 0.736-1.838 1.562-0.275 0.827-0.067 1.739 0.536 2.36l6.088 6.298-1.413 8.731c-0.142 0.88 0.226 1.762 0.947 2.277 0.397 0.28 0.862 0.424 1.328 0.424 0.384 0 0.766-0.098 1.115-0.291l7.243-4.037 4.768 2.656v-3.662l-4.768-2.658-7.184 4.005 1.378-8.517-1.114-1.154-4.922-5.090 8.323-1.282 0.723-1.552 2.798-6.014 3.52 7.566 8.326 1.283-6.038 6.243 0.733 4.53h3.242l-0.56-3.458 6.091-6.298c0.6-0.622 0.806-1.534 0.531-2.362z"></path>
-								</svg>
-							</span>
-						</div>
-					</li>
-					<li>
-						<span class="font">
-							<img src="image/home/avatar44-sm.jpg">
-						</span>
-						<div class="page">
-							<span>Tapronus Rock</span>
-							<span>Rock Band</span>
-							<!-- 收藏图标 -->
-							<span class="fav">
-								<svg id="olymp-star-icon" viewBox="0 0 32 32">
-									<title>star-icon</title>
-									<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
-									<path d="M31.88 11.91c-0.275-0.826-0.984-1.43-1.837-1.562l-8.309-1.28-3.611-7.763c-0.379-0.816-1.194-1.336-2.090-1.336-0.893 0-1.707 0.522-2.086 1.336l-3.613 7.763-8.309 1.28c-0.854 0.131-1.563 0.736-1.838 1.562-0.275 0.827-0.067 1.739 0.536 2.36l6.088 6.298-1.413 8.731c-0.142 0.88 0.226 1.762 0.947 2.277 0.397 0.28 0.862 0.424 1.328 0.424 0.384 0 0.766-0.098 1.115-0.291l7.243-4.037 4.768 2.656v-3.662l-4.768-2.658-7.184 4.005 1.378-8.517-1.114-1.154-4.922-5.090 8.323-1.282 0.723-1.552 2.798-6.014 3.52 7.566 8.326 1.283-6.038 6.243 0.733 4.53h3.242l-0.56-3.458 6.091-6.298c0.6-0.622 0.806-1.534 0.531-2.362z"></path>
-								</svg>
-							</span>
-						</div>
-					</li>
-					<li>
-						<span class="font">
-							<img src="image/home/avatar45-sm.jpg">
-						</span>
-						<div class="page">
-							<span>Pixel Digital Design</span>
-							<span>Company</span>
-							<!-- 收藏图标 -->
-							<span class="fav">
-								<svg id="olymp-star-icon" viewBox="0 0 32 32">
-									<title>star-icon</title>
-									<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
-									<path d="M31.88 11.91c-0.275-0.826-0.984-1.43-1.837-1.562l-8.309-1.28-3.611-7.763c-0.379-0.816-1.194-1.336-2.090-1.336-0.893 0-1.707 0.522-2.086 1.336l-3.613 7.763-8.309 1.28c-0.854 0.131-1.563 0.736-1.838 1.562-0.275 0.827-0.067 1.739 0.536 2.36l6.088 6.298-1.413 8.731c-0.142 0.88 0.226 1.762 0.947 2.277 0.397 0.28 0.862 0.424 1.328 0.424 0.384 0 0.766-0.098 1.115-0.291l7.243-4.037 4.768 2.656v-3.662l-4.768-2.658-7.184 4.005 1.378-8.517-1.114-1.154-4.922-5.090 8.323-1.282 0.723-1.552 2.798-6.014 3.52 7.566 8.326 1.283-6.038 6.243 0.733 4.53h3.242l-0.56-3.458 6.091-6.298c0.6-0.622 0.806-1.534 0.531-2.362z"></path>
-								</svg>
-							</span>
-						</div>
-					</li>
-					<li>
-						<span class="font">
-							<img src="image/home/avatar46-sm.jpg">
-						</span>
-						<div class="page">
-							<span>Thompson’s Custom Clothing Boutique</span>
-							<span>Clothing Store</span>
-							<!-- 收藏图标 -->
-							<span class="fav">
-								<svg id="olymp-star-icon" viewBox="0 0 32 32">
-									<title>star-icon</title>
-									<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
-									<path d="M31.88 11.91c-0.275-0.826-0.984-1.43-1.837-1.562l-8.309-1.28-3.611-7.763c-0.379-0.816-1.194-1.336-2.090-1.336-0.893 0-1.707 0.522-2.086 1.336l-3.613 7.763-8.309 1.28c-0.854 0.131-1.563 0.736-1.838 1.562-0.275 0.827-0.067 1.739 0.536 2.36l6.088 6.298-1.413 8.731c-0.142 0.88 0.226 1.762 0.947 2.277 0.397 0.28 0.862 0.424 1.328 0.424 0.384 0 0.766-0.098 1.115-0.291l7.243-4.037 4.768 2.656v-3.662l-4.768-2.658-7.184 4.005 1.378-8.517-1.114-1.154-4.922-5.090 8.323-1.282 0.723-1.552 2.798-6.014 3.52 7.566 8.326 1.283-6.038 6.243 0.733 4.53h3.242l-0.56-3.458 6.091-6.298c0.6-0.622 0.806-1.534 0.531-2.362z"></path>
-								</svg>
-							</span>
-						</div>
-					</li>
-					<li>
-						<span class="font">
-							<img src="image/home/avatar41-sm.jpg">
-						</span>
-						<div class="page">
-							<span>Crimson Agency</span>
-							<span>Company</span>
-							<!-- 收藏图标 -->
-							<span class="fav">
-								<svg id="olymp-star-icon" viewBox="0 0 32 32">
-									<title>star-icon</title>
-									<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
-									<path d="M31.88 11.91c-0.275-0.826-0.984-1.43-1.837-1.562l-8.309-1.28-3.611-7.763c-0.379-0.816-1.194-1.336-2.090-1.336-0.893 0-1.707 0.522-2.086 1.336l-3.613 7.763-8.309 1.28c-0.854 0.131-1.563 0.736-1.838 1.562-0.275 0.827-0.067 1.739 0.536 2.36l6.088 6.298-1.413 8.731c-0.142 0.88 0.226 1.762 0.947 2.277 0.397 0.28 0.862 0.424 1.328 0.424 0.384 0 0.766-0.098 1.115-0.291l7.243-4.037 4.768 2.656v-3.662l-4.768-2.658-7.184 4.005 1.378-8.517-1.114-1.154-4.922-5.090 8.323-1.282 0.723-1.552 2.798-6.014 3.52 7.566 8.326 1.283-6.038 6.243 0.733 4.53h3.242l-0.56-3.458 6.091-6.298c0.6-0.622 0.806-1.534 0.531-2.362z"></path>
-								</svg>
-							</span>
-						</div>
-					</li>
-					<li>
-						<span class="font">
-							<img src="image/home/avatar42-sm.jpg">
-						</span>
-						<div class="page">
-							<span>Mannequin Angel</span>
-							<span>Clothing Store</span>
+							<span>{{item.title}}</span>
+							<span>{{item.author}}</span>
 							<!-- 收藏图标 -->
 							<span class="fav">
 								<svg id="olymp-star-icon" viewBox="0 0 32 32">
@@ -986,80 +853,28 @@
 			</div>
 
 			<!-- 民意测验 -->
-			<div class="Poll">
-				<span class="title">James's Poll</span>
+			<div class="Poll" v-for="item in Poll">
+				<span class="title">{{item.name}}</span>
 				<div class="content">
 					<!-- 测验题目 -->
-					<div class="test">If you had to choose, which actor do you prefer to be the next Darkman?</div>
+					<div class="test">{{item.question}}</div>
 					<ul class="vote">
-						<li>
+						<li v-for="index in item.option">
 							<!-- 选择投票人 -->
 							<div class="line1">
 								<span class="dot"></span>
-								<span class="name">Thomas Bale</span>
-								<span class="percentage">61%</span>
+								<span class="name">{{index.name}}</span>
+								<span class="percentage">{{index.per}}</span>
 							</div>
 							<!-- 进度条 -->
 							<div class="line2">
 								<span class="bar"></span>
 							</div>
 							<!-- 投票人数 -->
-							<div class="line3">12 friends voted for this</div>
+							<div class="line3">{{index.num}} friends voted for this</div>
 							<!-- 部分投票人头像 -->
 							<ul class="line4">
-								<li><img src="image/home/friend-harmonic1.jpg"></li>
-								<li><img src="image/home/friend-harmonic2.jpg"></li>
-								<li><img src="image/home/friend-harmonic3.jpg"></li>
-								<li><img src="image/home/friend-harmonic4.jpg"></li>
-								<li><img src="image/home/friend-harmonic5.jpg"></li>
-								<!-- 更多个 -->
-								<li><span>+3</span></li>
-							</ul>
-						</li>
-						<li>
-							<!-- 选择投票人 -->
-							<div class="line1">
-								<span class="dot"></span>
-								<span class="name">Ben Robertson</span>
-								<span class="percentage">27%</span>
-							</div>
-							<!-- 进度条 -->
-							<div class="line2">
-								<span class="bar" style="width: 27%;"></span>
-							</div>
-							<!-- 投票人数 -->
-							<div class="line3">7 friends voted for this</div>
-							<!-- 部分投票人头像 -->
-							<ul class="line4">
-								<li><img src="image/home/friend-harmonic1.jpg"></li>
-								<li><img src="image/home/friend-harmonic2.jpg"></li>
-								<li><img src="image/home/friend-harmonic3.jpg"></li>
-								<li><img src="image/home/friend-harmonic4.jpg"></li>
-								<li><img src="image/home/friend-harmonic5.jpg"></li>
-								<!-- 更多个 -->
-								<li><span>+3</span></li>
-							</ul>
-						</li>
-						<li>
-							<!-- 选择投票人 -->
-							<div class="line1">
-								<span class="dot"></span>
-								<span class="name">Michael Streiton</span>
-								<span class="percentage">11%</span>
-							</div>
-							<!-- 进度条 -->
-							<div class="line2">
-								<span class="bar" style="width: 11%;"></span>
-							</div>
-							<!-- 投票人数 -->
-							<div class="line3">2 people voted for this</div>
-							<!-- 部分投票人头像 -->
-							<ul class="line4">
-								<li><img src="image/home/friend-harmonic1.jpg"></li>
-								<li><img src="image/home/friend-harmonic2.jpg"></li>
-								<li><img src="image/home/friend-harmonic3.jpg"></li>
-								<li><img src="image/home/friend-harmonic4.jpg"></li>
-								<li><img src="image/home/friend-harmonic5.jpg"></li>
+								<li v-for="id in index.img"><img :src=id.order></li>
 								<!-- 更多个 -->
 								<li><span>+3</span></li>
 							</ul>

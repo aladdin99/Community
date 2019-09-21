@@ -113,6 +113,13 @@ var vm = new Vue({
                     dateline: "20 hours ago",
                     content: "Hello World!",
                     fav: "99",
+                    avatar: [
+                    	{ order: "image/home/friend-harmonic7.jpg" },
+                    	{ order: "image/home/friend-harmonic8.jpg" },
+                    	{ order: "image/home/friend-harmonic9.jpg" },
+                    	{ order: "image/home/friend-harmonic10.jpg" },
+                    	{ order: "image/home/friend-harmonic11.jpg" },
+                    ],
                     likes: "62",
                     // 子级评论用户信息
                     comment: "",
@@ -129,6 +136,13 @@ var vm = new Vue({
                     dateline: "21 hours ago",
                     content: "If someone missed it, check out the new song by System of a Revenge! I thinks they are going back to their roots...",
                     fav: "99",
+                    avatar: [
+                    	{ order: "image/home/friend-harmonic7.jpg" },
+                    	{ order: "image/home/friend-harmonic8.jpg" },
+                    	{ order: "image/home/friend-harmonic9.jpg" },
+                    	{ order: "image/home/friend-harmonic10.jpg" },
+                    	{ order: "image/home/friend-harmonic11.jpg" },
+                    ],
                     likes: "62",
                     // 子级评论用户信息
                     comment: "",
@@ -151,6 +165,13 @@ var vm = new Vue({
                     dateline: "21 hours ago",
                     content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.",
                     fav: "99",
+                    avatar: [
+                    	{ order: "image/home/friend-harmonic7.jpg" },
+                    	{ order: "image/home/friend-harmonic8.jpg" },
+                    	{ order: "image/home/friend-harmonic9.jpg" },
+                    	{ order: "image/home/friend-harmonic10.jpg" },
+                    	{ order: "image/home/friend-harmonic11.jpg" },
+                    ],
                     likes: "62",
                     // 是否显示 子级评论用户信息
                     com_show: false,
@@ -216,6 +237,13 @@ var vm = new Vue({
                     dateline: "20 hours ago",
                     content: " Hi! Everyone should check out these amazing photographs that my friend shot the past week. Here’s one of them...leave a kind comment!",
                     fav: "18",
+                    avatar: [
+                    	{ order: "image/home/friend-harmonic7.jpg" },
+                    	{ order: "image/home/friend-harmonic8.jpg" },
+                    	{ order: "image/home/friend-harmonic9.jpg" },
+                    	{ order: "image/home/friend-harmonic10.jpg" },
+                    	{ order: "image/home/friend-harmonic11.jpg" },
+                    ],
                     likes: "6",
                     // 子级评论用户信息
                     comment: "",
@@ -224,7 +252,124 @@ var vm = new Vue({
                     image: "image/home/post-photo6.jpg"
                 }
             }
-        ]
+        ],
+    // 东部-->最新图片
+    	last_photos: [
+    		{ order: "image/home/last-photo10-large.jpg" },
+    		{ order: "image/home/last-phot11-large.jpg" },
+    		{ order: "image/home/last-phot12-large.jpg" },
+    		{ order: "image/home/last-phot13-large.jpg" },
+    		{ order: "image/home/last-phot14-large.jpg" },
+    		{ order: "image/home/last-phot15-large.jpg" },
+    		{ order: "image/home/last-phot16-large.jpg" },
+    		{ order: "image/home/last-phot17-large.jpg" },
+    		{ order: "image/home/last-phot18-large.jpg" }
+    	],
+    // 东部-->博客文章
+    	blog_posts: [
+    		{
+    			name: "My Perfect Vacations in South America and Europe",
+    			content: "orem ipsum dolor sit amet, consect adipisicing elit, sed do eiusmod por incidid ut labore et.",
+    			time: "7 hours ago"
+    		},
+    		{
+    			name: "The Big Experience of Travelling Alone",
+    			content: "Lorem ipsum dolor sit amet, consect adipisicing elit, sed do eiusmod por incidid ut labore et.",
+    			time: "March 18th, at 6:52pm"
+    		}
+    	],
+    // 东部-->朋友
+    	friends: [
+    		{ order: "image/home/avatar24-sm.jpg" },
+    		{ order: "image/home/avatar25-sm.jpg" },
+    		{ order: "image/home/avatar26-sm.jpg" },
+    		{ order: "image/home/avatar27-sm.jpg" },
+    		{ order: "image/home/avatar28-sm.jpg" },
+    		{ order: "image/home/avatar29-sm.jpg" },
+    		{ order: "image/home/avatar30-sm.jpg" },
+    		{ order: "image/home/avatar31-sm.jpg" },
+    		{ order: "image/home/avatar32-sm.jpg" },
+    		{ order: "image/home/avatar33-sm.jpg" },
+    		{ order: "image/home/avatar34-sm.jpg" },
+    		{ order: "image/home/avatar35-sm.jpg" },
+    		{ order: "image/home/avatar36-sm.jpg" },
+    		{ order: "image/home/avatar37-sm.jpg" },
+    		{ order: "image/home/avatar38-sm.jpg" }
+    	],
+    // 东部-->特别喜爱
+    	Favourite: [
+    		{
+    			img: "image/home/avatar43-sm.jpg",
+    			title: "The Marina Bar",
+    			author: "Restaurant / Bar"
+    		},
+    		{
+    			img: "image/home/avatar44-sm.jpg",
+    			title: "Tapronus Rock",
+    			author: "Rock Band"
+    		},
+    		{
+    			img: "image/home/avatar45-sm.jpg",
+    			title: "Pixel Digital Design",
+    			author: "Company"
+    		},
+    		{
+    			img: "image/home/avatar46-sm.jpg",
+    			title: "Thompson’s Custom Clothing Boutique",
+    			author: "Clothing Store"
+    		},
+    		{
+    			img: "image/home/avatar41-sm.jpg",
+    			title: "Crimson Agency",
+    			author: "Company"
+    		},
+    		{
+    			img: "image/home/avatar42-sm.jpg",
+    			title: "Mannequin Angel",
+    			author: "Clothing Store"
+    		}
+    	],
+    // 东部-->民意测验
+    	Poll: [
+    		{	
+    			name: "James's Poll",
+    			question: "If you had to choose, which actor do you prefer to be the next Darkman?",
+    			option: [
+    				{
+    					name: "Thomas Bale",
+    					per: "61%",
+    					num: "12",
+    					img: [
+    						{ order: "image/home/friend-harmonic1.jpg" },
+    						{ order: "image/home/friend-harmonic2.jpg" },
+    						{ order: "image/home/friend-harmonic3.jpg" },
+    						{ order: "image/home/friend-harmonic4.jpg" },
+    						{ order: "image/home/friend-harmonic5.jpg" }
+    					]
+    				},
+    				{
+    					name: "Ben Robertson",
+    					per: "27%",
+    					num: "7",
+    					img: [
+    						{ order: "image/home/friend-harmonic1.jpg" },
+    						{ order: "image/home/friend-harmonic2.jpg" },
+    						{ order: "image/home/friend-harmonic3.jpg" },
+    						{ order: "image/home/friend-harmonic5.jpg" }
+    					]
+    				},
+    				{
+    					name: "Michael Streiton",
+    					per: "11%",
+    					num: "2",
+    					img: [
+    						{ order: "image/home/friend-harmonic1.jpg" },
+    						{ order: "image/home/friend-harmonic5.jpg" }
+    					]
+    				}
+    			]
+    		}
+    	]
     },
     computed: {
     	// 判断子子评论是否展开
