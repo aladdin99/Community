@@ -405,18 +405,18 @@
 				<div class="part1_content">
 					<!-- 关于我 -->
 					<div class="me">
-						<div>{{ part1_content[0].me.name }}</div>
-						<div>{{ part1_content[0].me.content }}</div>
+						<div>{{ brief_content[0].me.name }}</div>
+						<div>{{ brief_content[0].me.content }}</div>
 					</div>
 					<!-- 最喜爱的电视节目 -->
 					<div class="TV">
-						<div>{{ part1_content[1].tv.name }}</div>
-						<div>{{ part1_content[1].tv.content }}</div>
+						<div>{{ brief_content[1].tv.name }}</div>
+						<div>{{ brief_content[1].tv.content }}</div>
 					</div>
 					<!-- 最喜爱的音乐或者文章 -->
 					<div class="Artists">
-						<div>{{ part1_content[2].artists.name }}</div>
-						<div>{{ part1_content[2].artists.content }}</div>
+						<div>{{ brief_content[2].artists.name }}</div>
+						<div>{{ brief_content[2].artists.content }}</div>
 					</div>
 					<!-- 友情链接 -->
 					<div class="Networks">
@@ -444,14 +444,14 @@
 			<div class="part2">
 				<div class="part2_title">Jame's Badges</div>
 				<div class="part2_content">
-					<span v-for="(item,index) in part2_content"><img :src=item.order></span>
+					<span v-for="(item,index) in badge_content"><img :src=item.order></span>
 				</div>
 			</div>
 			<!-- 播放列表 -->
 			<div class="part3">
 				<div class="part3_title">My Spotify PlayList</div>
 				<div class="part3_content">
-					<div v-for="(item,index) in part3_content">
+					<div v-for="(item,index) in playlist_content">
 						<!-- 歌曲的预览图 -->
 						<span class="part3_content_avatar">
 							<img :src=item.image>
@@ -512,7 +512,7 @@
 			<div class="part5">
 				<div class="part4_title">Last Video</div>
 				<div class="part4_video">
-					<div class="part4_video_id" v-for="item in Last_video">
+					<div class="part4_video_id" v-for="(item,index) in Last_video">
 						<img :src=item.img>
 						<div class="video_info">
 							<span>{{ item.content }}</span>
@@ -537,7 +537,7 @@
 		<!-- 中部 -->
 		<div class="middle">
 			<!-- 普通说说 -->
-			<div class="part1">
+			<div class="part1" v-for="(item,index) in publisher">
 				<!-- head栏 -->
 				<div class="middle_head">
 					<span class="middle_head_avatar">
@@ -545,7 +545,7 @@
 					</span>
 					<div class="middle_head_info">
 						<span class="middle_head_name">
-							<span>James Spiegel</span>
+							<span>{{ item.name }}</span>
 							<span>
 								<svg id="olymp-three-dots-icon" viewBox="0 0 128 32" style="width: 1.5rem;fill: #c0c4d8;">
 									<title>three-dots-icon</title>
@@ -553,147 +553,17 @@
 								</svg>
 							</span>
 						</span>
-						<span style="flex: 1;">19 hours ago</span>
+						<span style="flex: 1;">{{ item.article.dateline }}</span>
 					</div>
 				</div>
 				
-				<!-- content栏 -->
+				<!-- 展示说说内容区域 -->
 				<div class="middle_content">
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
-				</div>
-				
-				<!-- handle栏 -->
-				<div class="middle_handle">
-					<div class="middle_handle_mid">
-						<!-- 喜欢的人数 -->
-						<span class="likes">
-							<svg id="olymp-heart-icon" viewBox="0 0 36 32">
-								<title>heart-icon</title>
-								<path d="M23.111 21.333h3.556v3.556h-3.556v-3.556z"></path>
-								<path d="M32.512 2.997c-2.014-2.011-4.263-3.006-7.006-3.006-2.62 0-5.545 2.089-7.728 4.304-2.254-2.217-5.086-4.295-7.797-4.295-2.652 0-4.99 0.793-6.937 2.738-4.057 4.043-4.057 10.599 0 14.647 1.157 1.157 12.402 13.657 12.402 13.657 0.64 0.638 1.481 0.958 2.32 0.958s1.678-0.32 2.318-0.958l1.863-2.012-2.523-2.507-1.655 1.787c-2.078-2.311-11.095-12.324-12.213-13.442-1.291-1.285-2-2.994-2-4.811 0-1.813 0.709-3.518 2-4.804 1.177-1.175 2.54-1.698 4.425-1.698 0.464 0 2.215 0.236 5.303 3.273l2.533 2.492 2.492-2.532c2.208-2.242 4.201-3.244 5.196-3.244 1.769 0 3.113 0.588 4.496 1.97 1.289 1.284 1.998 2.99 1.998 4.804 0 1.815-0.709 3.522-1.966 4.775-0.087 0.085-0.098 0.094-1.9 2.041l-0.156 0.167 2.523 2.51 0.24-0.26c0 0 1.742-1.881 1.774-1.911 4.055-4.043 4.055-10.603-0.002-14.644z"></path>
-							</svg>
-							<span>18</span>
-						</span>
-						<!-- 点赞人数 -->
-						<ul class="avatar">
-							<li>
-								<img src="image/home/friend-harmonic7.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic8.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic9.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic10.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic11.jpg">
-							</li>
-						</ul>
-						<!-- 更多人喜欢 -->
-						<div class="more">
-							<span>
-								<span style="font-weight: 700;color: #5f6071">Jenny,Robert</span>  and
-							</span>
-							<span>6 more liked this</span>
-						</div>
-						<!-- 消息/评论 -->
-						<div class="msg_repeat">
-							<span class="msg">
-								<svg id="olymp-speech-balloon-icon" viewBox="0 0 35 32" style="width: 1.75rem;fill: #c2c5d9;margin-top: .5rem;">
-									<title>speech-balloon-icon</title>
-									<path d="M32 0h-28.8c-1.768 0-3.2 1.434-3.2 3.2v16c0 1.766 1.434 3.2 3.2 3.2 0 0 0.6 0 1.6 0v-3.2h-1.6v-16h28.8v19.2c1.766 0 3.2-1.434 3.2-3.2v-16c0-1.766-1.434-3.2-3.2-3.2zM20.8 22.4h1.6v-3.2h-1.6v3.2zM25.6 22.4h3.2v-3.2h-3.2v3.2zM27.2 6.4h-20.8v3.2h20.8v-3.2zM6.4 16h12.8v-3.2h-12.8v3.2z"></path>
-									<path d="M17.6 19.2l-9.6 6.626v-6.626h-3.2v12.8l12.8-9.6h3.2v-3.2z"></path>
-								</svg>
-								<span>17</span>
-							</span>
-							<span class="repeat">
-								<svg id="olymp-share-icon" viewBox="0 0 40 32" style="width: 2rem;fill: #c2c5d9;margin-top: .5rem;">
-									<title>share-icon</title>
-									<path d="M11.168 16.788v3.046h9.132v3.048h-9.132v3.072l-6.095-4.584 6.095-4.582zM14.216 10.683l-14.216 10.685 14.216 10.688v-6.129h9.132v-9.144h-9.132v-6.1z"></path>
-									<path d="M15.739 6.095h3.048v3.048h-3.048v-3.048z"></path>
-									<path d="M35.854 8.25l-10.973-8.25v6.1h-3.048v3.049h6.095v-3.046l6.095 4.582-6.095 4.582v-3.072h-12.18v3.048h9.132v6.129l14.214-10.686z"></path>
-								</svg>
-								<span style="transform: translate(.5rem,-.4rem);">24</span>
-							</span>
-						</div>
-					</div>
-				</div>
-				
-				<!-- 右侧悬浮栏 -->
-				<ul class="middle_right">
-					<!-- <li>
-						<span style="background-color:#ffc923;">
-							<svg id="olymp-trophy-icon" viewBox="0 0 36 32">
-								<title>trophy-icon</title>
-								<path d="M24 4v10.4c0 3.088-2.692 5.6-6 5.6s-6-2.512-6-5.6v-10.4h12zM28 0h-20v14.4c0 5.302 4.476 9.6 10 9.6s10-4.298 10-9.6v-14.4z"></path>
-								<path d="M16 22h4v10h-4v-10z"></path>
-								<path d="M12 28h12v4h-12v-4z"></path>
-								<path d="M12.014 18h-2c-7.506 0-9.782-7.8-9.936-11.924l-0.078-2.076h12.014v14zM4.356 8c0.402 1.914 1.364 4.598 3.658 5.602v-5.602h-3.658z"></path>
-								<path d="M23.986 4h12.014l-0.078 2.076c-0.154 4.124-2.43 11.924-9.936 11.924h-2v-14zM27.986 8v5.602c2.294-1.004 3.256-3.688 3.658-5.602h-3.658z"></path>
-							</svg>
-						</span>
-					</li> -->
-					<li>
+					{{ item.article.content }}
+					<!-- 转发的视频信息 -->
+					<div class="repeat" v-if="item.article.social">
 						<span>
-							<svg id="olymp-like-post-icon" viewBox="0 0 37 32">
-								<title>like-post-icon</title>
-								<path d="M33.449 2.994c-2.066-2.009-4.377-3.006-7.191-3.006-2.69 0-5.691 2.089-7.934 4.306-2.311-2.217-5.221-4.295-8.002-4.295-2.722 0-5.122 0.793-7.12 2.736-4.165 4.043-4.165 10.601 0 14.649 1.189 1.154 12.729 13.655 12.729 13.655 0.656 0.64 1.52 0.96 2.379 0.96 0.862 0 1.721-0.32 2.382-0.96l1.726-1.815-3.237-3.234-0.857 0.905c-3.122-3.381-10.862-11.744-11.936-12.789-1.122-1.090-1.739-2.528-1.737-4.050 0-1.52 0.617-2.955 1.739-4.046 1.024-0.997 2.238-1.44 3.931-1.44 0.777 0 2.512 0.791 4.839 3.022l3.214 3.081 3.163-3.131c2.215-2.19 4.037-2.985 4.718-2.985 1.573 0 2.77 0.512 4.007 1.714 1.12 1.088 1.737 2.523 1.737 4.046s-0.617 2.958-1.669 3.982c-0.13 0.121-0.135 0.123-2.037 2.123l-0.187 0.199 3.23 3.237 0.046-0.048 0.242-0.258c0 0 1.79-1.881 1.824-1.911 4.162-4.043 4.162-10.603 0-14.647z"></path>
-								<path d="M22.889 20.578h4.571v4.571h-4.571v-4.571z"></path>
-							</svg>
-						</span>
-					</li>
-					<li>
-						<span>
-							<svg id="olymp-comments-post-icon" viewBox="0 0 36 32">
-								<title>comments-post-icon</title>
-								<path d="M32 0h-28c-2.21 0-4 1.792-4 4v18c0 2.208 1.792 4 4 4 0 0 0.75 0 2 0v-4h-2v-18h28v22c2.208 0 4-1.792 4-4v-18c0-2.208-1.792-4-4-4zM18 26h2v-4h-2v4zM24 26h4v-4h-4v4zM8 12h20v-4h-20v4zM8 18h12v-4h-12v4z"></path>
-								<path d="M18 22l-8 4.282v-4.282h-4v10l12-6v-4z"></path>
-							</svg>
-						</span>
-					</li>
-					<li>
-						<span>
-							<svg id="olymp-share-icon" viewBox="0 0 40 32" style="width: 2rem;margin-top: .9rem;">
-								<title>share-icon</title>
-								<path d="M11.168 16.788v3.046h9.132v3.048h-9.132v3.072l-6.095-4.584 6.095-4.582zM14.216 10.683l-14.216 10.685 14.216 10.688v-6.129h9.132v-9.144h-9.132v-6.1z"></path>
-								<path d="M15.739 6.095h3.048v3.048h-3.048v-3.048z"></path>
-								<path d="M35.854 8.25l-10.973-8.25v6.1h-3.048v3.049h6.095v-3.046l6.095 4.582-6.095 4.582v-3.072h-12.18v3.048h9.132v6.129l14.214-10.686z"></path>
-							</svg>
-						</span>
-					</li>
-				</ul>
-			</div>
-
-			<!-- 含转发功能 -->
-			<div class="part1">
-				<!-- head栏 -->
-				<div class="middle_head">
-					<span class="middle_head_avatar">
-						<img src="image/home/author-page.jpg" style="width: 100%;border-radius: 50%;">
-					</span>
-					<div class="middle_head_info">
-						<span class="middle_head_name">
-							<span>James Spiegel</span>
-							<span>
-								<svg id="olymp-three-dots-icon" viewBox="0 0 128 32" style="width: 1.5rem;fill: #c0c4d8;">
-									<title>three-dots-icon</title>
-									<path d="M112-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM64-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM16-0.008c-8.832 0-16 7.16-16 16s7.168 15.992 16 15.992 16-7.16 16-15.992c0-8.84-7.16-16-16-16z"></path>
-								</svg>
-							</span>
-						</span>
-						<span style="flex: 1;">19 hours ago</span>
-					</div>
-				</div>
-				
-				<!-- content栏 -->
-				<div class="middle_content">
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
-					<div class="repeat">
-						<span>
-							<img src="image/home/video5.jpg">
+							<img :src=item.article.social.image>
 							<span>
 								<svg id="olymp-play-icon" viewBox="0 0 28 32" style="fill: #fff;width: 1.75rem;margin-left: .3rem;">
 									<title>play-icon</title>
@@ -704,12 +574,15 @@
 						</span>
 						<span>
 							<div class="repeat_content">
-								<span>System of a Revenge-Nothing Else Matters(LIVE)</span>
-								<span>Lorem ipsum dolor sit amet,consectetur ipisiciling elit,sed do eiusmod tempo ubcududunt ut labore...</span>
-								<span>YOUTUBE.COM</span>
+								<span>{{ item.article.social.title }}</span>
+								<span>{{ item.article.social.content }}</span>
+								<span>{{ item.article.social.from }}</span>
 							</div>
 						</span>
 					</div>
+					<div class="img_push" v-if="item.article.image">
+						<img :src=item.article.image style="width: 100%;">
+					</div>
 				</div>
 				
 				<!-- handle栏 -->
@@ -722,7 +595,7 @@
 								<path d="M23.111 21.333h3.556v3.556h-3.556v-3.556z"></path>
 								<path d="M32.512 2.997c-2.014-2.011-4.263-3.006-7.006-3.006-2.62 0-5.545 2.089-7.728 4.304-2.254-2.217-5.086-4.295-7.797-4.295-2.652 0-4.99 0.793-6.937 2.738-4.057 4.043-4.057 10.599 0 14.647 1.157 1.157 12.402 13.657 12.402 13.657 0.64 0.638 1.481 0.958 2.32 0.958s1.678-0.32 2.318-0.958l1.863-2.012-2.523-2.507-1.655 1.787c-2.078-2.311-11.095-12.324-12.213-13.442-1.291-1.285-2-2.994-2-4.811 0-1.813 0.709-3.518 2-4.804 1.177-1.175 2.54-1.698 4.425-1.698 0.464 0 2.215 0.236 5.303 3.273l2.533 2.492 2.492-2.532c2.208-2.242 4.201-3.244 5.196-3.244 1.769 0 3.113 0.588 4.496 1.97 1.289 1.284 1.998 2.99 1.998 4.804 0 1.815-0.709 3.522-1.966 4.775-0.087 0.085-0.098 0.094-1.9 2.041l-0.156 0.167 2.523 2.51 0.24-0.26c0 0 1.742-1.881 1.774-1.911 4.055-4.043 4.055-10.603-0.002-14.644z"></path>
 							</svg>
-							<span>18</span>
+							<span>{{ item.article.fav }}</span>
 						</span>
 						<!-- 点赞人数 -->
 						<ul class="avatar">
@@ -747,17 +620,18 @@
 							<span>
 								<span style="font-weight: 700;color: #5f6071">Jenny,Robert</span>  and
 							</span>
-							<span>6 more liked this</span>
+							<span>{{ item.article.likes }} more liked this</span>
 						</div>
 						<!-- 消息/评论 -->
 						<div class="msg_repeat">
-							<span class="msg">
+							<!-- 这里的click事件判断"是否展开子评论内容?" -->
+							<span class="msg" v-on:click="item.article.flag = !item.article.flag">
 								<svg id="olymp-speech-balloon-icon" viewBox="0 0 35 32" style="width: 1.75rem;fill: #c2c5d9;margin-top: .5rem;">
 									<title>speech-balloon-icon</title>
 									<path d="M32 0h-28.8c-1.768 0-3.2 1.434-3.2 3.2v16c0 1.766 1.434 3.2 3.2 3.2 0 0 0.6 0 1.6 0v-3.2h-1.6v-16h28.8v19.2c1.766 0 3.2-1.434 3.2-3.2v-16c0-1.766-1.434-3.2-3.2-3.2zM20.8 22.4h1.6v-3.2h-1.6v3.2zM25.6 22.4h3.2v-3.2h-3.2v3.2zM27.2 6.4h-20.8v3.2h20.8v-3.2zM6.4 16h12.8v-3.2h-12.8v3.2z"></path>
 									<path d="M17.6 19.2l-9.6 6.626v-6.626h-3.2v12.8l12.8-9.6h3.2v-3.2z"></path>
 								</svg>
-								<span>17</span>
+								<span>{{ item.article.comment.length }}</span>
 							</span>
 							<span class="repeat">
 								<svg id="olymp-share-icon" viewBox="0 0 40 32" style="width: 2rem;fill: #c2c5d9;margin-top: .5rem;">
@@ -766,126 +640,7 @@
 									<path d="M15.739 6.095h3.048v3.048h-3.048v-3.048z"></path>
 									<path d="M35.854 8.25l-10.973-8.25v6.1h-3.048v3.049h6.095v-3.046l6.095 4.582-6.095 4.582v-3.072h-12.18v3.048h9.132v6.129l14.214-10.686z"></path>
 								</svg>
-								<span style="transform: translate(.5rem,-.4rem);">24</span>
-							</span>
-						</div>
-					</div>
-				</div>
-				
-				<!-- 右侧悬浮栏 -->
-				<ul class="middle_right">
-					<li>
-						<span>
-							<svg id="olymp-like-post-icon" viewBox="0 0 37 32">
-								<title>like-post-icon</title>
-								<path d="M33.449 2.994c-2.066-2.009-4.377-3.006-7.191-3.006-2.69 0-5.691 2.089-7.934 4.306-2.311-2.217-5.221-4.295-8.002-4.295-2.722 0-5.122 0.793-7.12 2.736-4.165 4.043-4.165 10.601 0 14.649 1.189 1.154 12.729 13.655 12.729 13.655 0.656 0.64 1.52 0.96 2.379 0.96 0.862 0 1.721-0.32 2.382-0.96l1.726-1.815-3.237-3.234-0.857 0.905c-3.122-3.381-10.862-11.744-11.936-12.789-1.122-1.090-1.739-2.528-1.737-4.050 0-1.52 0.617-2.955 1.739-4.046 1.024-0.997 2.238-1.44 3.931-1.44 0.777 0 2.512 0.791 4.839 3.022l3.214 3.081 3.163-3.131c2.215-2.19 4.037-2.985 4.718-2.985 1.573 0 2.77 0.512 4.007 1.714 1.12 1.088 1.737 2.523 1.737 4.046s-0.617 2.958-1.669 3.982c-0.13 0.121-0.135 0.123-2.037 2.123l-0.187 0.199 3.23 3.237 0.046-0.048 0.242-0.258c0 0 1.79-1.881 1.824-1.911 4.162-4.043 4.162-10.603 0-14.647z"></path>
-								<path d="M22.889 20.578h4.571v4.571h-4.571v-4.571z"></path>
-							</svg>
-						</span>
-					</li>
-					<li>
-						<span>
-							<svg id="olymp-comments-post-icon" viewBox="0 0 36 32">
-								<title>comments-post-icon</title>
-								<path d="M32 0h-28c-2.21 0-4 1.792-4 4v18c0 2.208 1.792 4 4 4 0 0 0.75 0 2 0v-4h-2v-18h28v22c2.208 0 4-1.792 4-4v-18c0-2.208-1.792-4-4-4zM18 26h2v-4h-2v4zM24 26h4v-4h-4v4zM8 12h20v-4h-20v4zM8 18h12v-4h-12v4z"></path>
-								<path d="M18 22l-8 4.282v-4.282h-4v10l12-6v-4z"></path>
-							</svg>
-						</span>
-					</li>
-					<li>
-						<span>
-							<svg id="olymp-share-icon" viewBox="0 0 40 32" style="width: 2rem;margin-top: .9rem;">
-								<title>share-icon</title>
-								<path d="M11.168 16.788v3.046h9.132v3.048h-9.132v3.072l-6.095-4.584 6.095-4.582zM14.216 10.683l-14.216 10.685 14.216 10.688v-6.129h9.132v-9.144h-9.132v-6.1z"></path>
-								<path d="M15.739 6.095h3.048v3.048h-3.048v-3.048z"></path>
-								<path d="M35.854 8.25l-10.973-8.25v6.1h-3.048v3.049h6.095v-3.046l6.095 4.582-6.095 4.582v-3.072h-12.18v3.048h9.132v6.129l14.214-10.686z"></path>
-							</svg>
-						</span>
-					</li>
-				</ul>
-			</div>
-
-			<!-- 回复展开 -->
-			<div class="part1">
-				<!-- head栏 -->
-				<div class="middle_head">
-					<span class="middle_head_avatar">
-						<img src="image/home/author-page.jpg" style="width: 100%;border-radius: 50%;">
-					</span>
-					<div class="middle_head_info">
-						<span class="middle_head_name">
-							<span>James Spiegel</span>
-							<span>
-								<svg id="olymp-three-dots-icon" viewBox="0 0 128 32" style="width: 1.5rem;fill: #c0c4d8;">
-									<title>three-dots-icon</title>
-									<path d="M112-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM64-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM16-0.008c-8.832 0-16 7.16-16 16s7.168 15.992 16 15.992 16-7.16 16-15.992c0-8.84-7.16-16-16-16z"></path>
-								</svg>
-							</span>
-						</span>
-						<span style="flex: 1;">19 hours ago</span>
-					</div>
-				</div>
-				
-				<!-- content栏 -->
-				<div class="middle_content">
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
-				</div>
-				
-				<!-- handle栏 -->
-				<div class="middle_handle">
-					<div class="middle_handle_mid">
-						<!-- 喜欢的人数 -->
-						<span class="likes">
-							<svg id="olymp-heart-icon" viewBox="0 0 36 32">
-								<title>heart-icon</title>
-								<path d="M23.111 21.333h3.556v3.556h-3.556v-3.556z"></path>
-								<path d="M32.512 2.997c-2.014-2.011-4.263-3.006-7.006-3.006-2.62 0-5.545 2.089-7.728 4.304-2.254-2.217-5.086-4.295-7.797-4.295-2.652 0-4.99 0.793-6.937 2.738-4.057 4.043-4.057 10.599 0 14.647 1.157 1.157 12.402 13.657 12.402 13.657 0.64 0.638 1.481 0.958 2.32 0.958s1.678-0.32 2.318-0.958l1.863-2.012-2.523-2.507-1.655 1.787c-2.078-2.311-11.095-12.324-12.213-13.442-1.291-1.285-2-2.994-2-4.811 0-1.813 0.709-3.518 2-4.804 1.177-1.175 2.54-1.698 4.425-1.698 0.464 0 2.215 0.236 5.303 3.273l2.533 2.492 2.492-2.532c2.208-2.242 4.201-3.244 5.196-3.244 1.769 0 3.113 0.588 4.496 1.97 1.289 1.284 1.998 2.99 1.998 4.804 0 1.815-0.709 3.522-1.966 4.775-0.087 0.085-0.098 0.094-1.9 2.041l-0.156 0.167 2.523 2.51 0.24-0.26c0 0 1.742-1.881 1.774-1.911 4.055-4.043 4.055-10.603-0.002-14.644z"></path>
-							</svg>
-							<span>18</span>
-						</span>
-						<!-- 点赞人数 -->
-						<ul class="avatar">
-							<li>
-								<img src="image/home/friend-harmonic7.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic8.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic9.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic10.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic11.jpg">
-							</li>
-						</ul>
-						<!-- 更多人喜欢 -->
-						<div class="more">
-							<span>
-								<span style="font-weight: 700;color: #5f6071">Jenny,Robert</span>  and
-							</span>
-							<span>6 more liked this</span>
-						</div>
-						<!-- 消息/评论 -->
-						<div class="msg_repeat">
-							<span class="msg">
-								<svg id="olymp-speech-balloon-icon" viewBox="0 0 35 32" style="width: 1.75rem;fill: #c2c5d9;margin-top: .5rem;">
-									<title>speech-balloon-icon</title>
-									<path d="M32 0h-28.8c-1.768 0-3.2 1.434-3.2 3.2v16c0 1.766 1.434 3.2 3.2 3.2 0 0 0.6 0 1.6 0v-3.2h-1.6v-16h28.8v19.2c1.766 0 3.2-1.434 3.2-3.2v-16c0-1.766-1.434-3.2-3.2-3.2zM20.8 22.4h1.6v-3.2h-1.6v3.2zM25.6 22.4h3.2v-3.2h-3.2v3.2zM27.2 6.4h-20.8v3.2h20.8v-3.2zM6.4 16h12.8v-3.2h-12.8v3.2z"></path>
-									<path d="M17.6 19.2l-9.6 6.626v-6.626h-3.2v12.8l12.8-9.6h3.2v-3.2z"></path>
-								</svg>
-								<span>17</span>
-							</span>
-							<span class="repeat">
-								<svg id="olymp-share-icon" viewBox="0 0 40 32" style="width: 2rem;fill: #c2c5d9;margin-top: .5rem;">
-									<title>share-icon</title>
-									<path d="M11.168 16.788v3.046h9.132v3.048h-9.132v3.072l-6.095-4.584 6.095-4.582zM14.216 10.683l-14.216 10.685 14.216 10.688v-6.129h9.132v-9.144h-9.132v-6.1z"></path>
-									<path d="M15.739 6.095h3.048v3.048h-3.048v-3.048z"></path>
-									<path d="M35.854 8.25l-10.973-8.25v6.1h-3.048v3.049h6.095v-3.046l6.095 4.582-6.095 4.582v-3.072h-12.18v3.048h9.132v6.129l14.214-10.686z"></path>
-								</svg>
-								<span style="transform: translate(.5rem,-.4rem);">24</span>
+								<span style="transform: translate(.5rem,-.4rem);">{{ item.article.replay }}</span>
 							</span>
 						</div>
 					</div>
@@ -923,8 +678,8 @@
 					</li>
 				</ul>
 
-				<!-- 子级评论 -->
-				<div class="middle_repeat">
+				<!-- 子级评论 --><!-- item.article.comment.length -->
+				<div class="middle_repeat" v-if="item.article.comment&&item.article.flag&&index<is_show"  v-for="(inner,index) in item.article.comment">
 					<!-- head栏 -->
 					<div class="repeat_head">
 						<span class="repeat_head_avatar">
@@ -932,7 +687,7 @@
 						</span>
 						<div class="repeat_head_info">
 							<span class="repeat_head_name">
-								<span> Elaine Dreyfuss</span>
+								<span> {{ inner.com_name }}</span>
 								<span>
 									<svg id="olymp-three-dots-icon" viewBox="0 0 128 32" style="width: 1.5rem;fill: #c0c4d8;">
 										<title>three-dots-icon</title>
@@ -940,12 +695,12 @@
 									</svg>
 								</span>
 							</span>
-							<span style="flex: 1;">5 mins ago</span>
+							<span style="flex: 1;">{{ inner.com_time }}</span>
 						</div>
 					</div>
 					<!-- content栏 -->
 					<div class="repeat_content">
-						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium der doloremque laudantium.
+						{{ inner.com_content }}
 						<div class="repeat_handle">
 							<div class="repeat_handle_mid">
 								<!-- 喜欢的人数 -->
@@ -955,53 +710,16 @@
 										<path d="M23.111 21.333h3.556v3.556h-3.556v-3.556z"></path>
 										<path d="M32.512 2.997c-2.014-2.011-4.263-3.006-7.006-3.006-2.62 0-5.545 2.089-7.728 4.304-2.254-2.217-5.086-4.295-7.797-4.295-2.652 0-4.99 0.793-6.937 2.738-4.057 4.043-4.057 10.599 0 14.647 1.157 1.157 12.402 13.657 12.402 13.657 0.64 0.638 1.481 0.958 2.32 0.958s1.678-0.32 2.318-0.958l1.863-2.012-2.523-2.507-1.655 1.787c-2.078-2.311-11.095-12.324-12.213-13.442-1.291-1.285-2-2.994-2-4.811 0-1.813 0.709-3.518 2-4.804 1.177-1.175 2.54-1.698 4.425-1.698 0.464 0 2.215 0.236 5.303 3.273l2.533 2.492 2.492-2.532c2.208-2.242 4.201-3.244 5.196-3.244 1.769 0 3.113 0.588 4.496 1.97 1.289 1.284 1.998 2.99 1.998 4.804 0 1.815-0.709 3.522-1.966 4.775-0.087 0.085-0.098 0.094-1.9 2.041l-0.156 0.167 2.523 2.51 0.24-0.26c0 0 1.742-1.881 1.774-1.911 4.055-4.043 4.055-10.603-0.002-14.644z"></path>
 									</svg>
-									<span>18</span>
+									<span>{{ inner.com_fav }}</span>
 								</span>
-								<span class="reply">Reply</span>
+								<!-- 这里的click事件判断"是否展开子子评论的内容" -->
+								<span class="reply" v-on:click="inner.inner_show = !inner.inner_show">Reply</span>
 							</div>
 						</div>	
 					</div>
 					
-					<!-- ------------循环子子级评论---------- -->
-					<!-- head栏 -->
-					<div class="repeat_head">
-						<span class="repeat_head_avatar">
-							<img src="image/home/avatar5-sm.jpg" style="width: 100%;border-radius: 50%;">
-						</span>
-						<div class="repeat_head_info">
-							<span class="repeat_head_name">
-								<span> Green Goo Rock</span>
-								<span>
-									<svg id="olymp-three-dots-icon" viewBox="0 0 128 32" style="width: 1.5rem;fill: #c0c4d8;">
-										<title>three-dots-icon</title>
-										<path d="M112-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM64-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM16-0.008c-8.832 0-16 7.16-16 16s7.168 15.992 16 15.992 16-7.16 16-15.992c0-8.84-7.16-16-16-16z"></path>
-									</svg>
-								</span>
-							</span>
-							<span style="flex: 1;">1 hour ago</span>
-						</div>
-					</div>
-					<!-- content栏 -->
-					<div class="repeat_content">
-						Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugiten, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi en lod nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit en lorem ipsum der.
-						<div class="repeat_handle">
-							<div class="repeat_handle_mid">
-								<!-- 喜欢的人数 -->
-								<span class="likes">
-									<svg id="olymp-heart-icon" viewBox="0 0 36 32">
-										<title>heart-icon</title>
-										<path d="M23.111 21.333h3.556v3.556h-3.556v-3.556z"></path>
-										<path d="M32.512 2.997c-2.014-2.011-4.263-3.006-7.006-3.006-2.62 0-5.545 2.089-7.728 4.304-2.254-2.217-5.086-4.295-7.797-4.295-2.652 0-4.99 0.793-6.937 2.738-4.057 4.043-4.057 10.599 0 14.647 1.157 1.157 12.402 13.657 12.402 13.657 0.64 0.638 1.481 0.958 2.32 0.958s1.678-0.32 2.318-0.958l1.863-2.012-2.523-2.507-1.655 1.787c-2.078-2.311-11.095-12.324-12.213-13.442-1.291-1.285-2-2.994-2-4.811 0-1.813 0.709-3.518 2-4.804 1.177-1.175 2.54-1.698 4.425-1.698 0.464 0 2.215 0.236 5.303 3.273l2.533 2.492 2.492-2.532c2.208-2.242 4.201-3.244 5.196-3.244 1.769 0 3.113 0.588 4.496 1.97 1.289 1.284 1.998 2.99 1.998 4.804 0 1.815-0.709 3.522-1.966 4.775-0.087 0.085-0.098 0.094-1.9 2.041l-0.156 0.167 2.523 2.51 0.24-0.26c0 0 1.742-1.881 1.774-1.911 4.055-4.043 4.055-10.603-0.002-14.644z"></path>
-									</svg>
-									<span>18</span>
-								</span>
-								<span class="reply">Reply</span>
-							</div>
-						</div>	
-					</div>
-					
-					<div class="order_repeat">
-						<!-- 子子级评论(1) -->
+					<!-- 子子级评论 -->
+					<div class="order_repeat" v-if="inner.com_comment&&inner.inner_show" v-for="ics in inner.com_comment">
 						<div class="last_child_repeat">
 							<div class="last_repeat">
 								<!-- 左边框上的小圆点 -->
@@ -1010,11 +728,11 @@
 								<!-- head栏 -->
 								<div class="repeat_head">
 									<span class="repeat_head_avatar">
-										<img src="image/home/avatar8-sm.jpg" style="width: 100%;border-radius: 50%;">
+										<img :src=ics.ic_avatar style="width: 100%;border-radius: 50%;">
 									</span>
 									<div class="repeat_head_info">
 										<span class="repeat_head_name">
-											<span>Diana Jameson</span>
+											<span>{{ ics.ic_name }}</span>
 											<span>
 												<svg id="olymp-three-dots-icon" viewBox="0 0 128 32" style="width: 1.5rem;fill: #c0c4d8;">
 													<title>three-dots-icon</title>
@@ -1022,11 +740,11 @@
 												</svg>
 											</span>
 										</span>
-										<span style="flex: 1;">39 mins ago</span>
+										<span style="flex: 1;">{{ ics.ic_time }}</span>
 									</div>
 								</div>
 								<div class="repeat_content">
-									Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+									{{ ics.ic_content }}
 									<div class="repeat_handle">
 										<div class="repeat_handle_mid">
 											<!-- 喜欢的人数 -->
@@ -1036,7 +754,7 @@
 													<path d="M23.111 21.333h3.556v3.556h-3.556v-3.556z"></path>
 													<path d="M32.512 2.997c-2.014-2.011-4.263-3.006-7.006-3.006-2.62 0-5.545 2.089-7.728 4.304-2.254-2.217-5.086-4.295-7.797-4.295-2.652 0-4.99 0.793-6.937 2.738-4.057 4.043-4.057 10.599 0 14.647 1.157 1.157 12.402 13.657 12.402 13.657 0.64 0.638 1.481 0.958 2.32 0.958s1.678-0.32 2.318-0.958l1.863-2.012-2.523-2.507-1.655 1.787c-2.078-2.311-11.095-12.324-12.213-13.442-1.291-1.285-2-2.994-2-4.811 0-1.813 0.709-3.518 2-4.804 1.177-1.175 2.54-1.698 4.425-1.698 0.464 0 2.215 0.236 5.303 3.273l2.533 2.492 2.492-2.532c2.208-2.242 4.201-3.244 5.196-3.244 1.769 0 3.113 0.588 4.496 1.97 1.289 1.284 1.998 2.99 1.998 4.804 0 1.815-0.709 3.522-1.966 4.775-0.087 0.085-0.098 0.094-1.9 2.041l-0.156 0.167 2.523 2.51 0.24-0.26c0 0 1.742-1.881 1.774-1.911 4.055-4.043 4.055-10.603-0.002-14.644z"></path>
 												</svg>
-												<span>18</span>
+												<span>{{ ics.ic_fav }}</span>
 											</span>
 											<span class="reply">Reply</span>
 										</div>
@@ -1044,229 +762,31 @@
 								</div>
 							</div>
 						</div>
-						<!-- 子子级评论(2) -->
-						<div class="last_child_repeat">
-							<div class="last_repeat">
-								<!-- 左边框上的小圆点 -->
-								<span class="last_repeat_dot"></span>
-
-								<!-- head栏 -->
-								<div class="repeat_head">
-									<span class="repeat_head_avatar">
-										<img src="image/home/avatar2-sm.jpg" style="width: 100%;border-radius: 50%;">
-									</span>
-									<div class="repeat_head_info">
-										<span class="repeat_head_name">
-											<span> Nicholas Grisom</span>
-											<span>
-												<svg id="olymp-three-dots-icon" viewBox="0 0 128 32" style="width: 1.5rem;fill: #c0c4d8;">
-													<title>three-dots-icon</title>
-													<path d="M112-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM64-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM16-0.008c-8.832 0-16 7.16-16 16s7.168 15.992 16 15.992 16-7.16 16-15.992c0-8.84-7.16-16-16-16z"></path>
-												</svg>
-											</span>
-										</span>
-										<span style="flex: 1;">24 mins ago</span>
-									</div>
-								</div>
-								<div class="repeat_content">
-									Excepteur sint occaecat cupidatat non proident.
-									<div class="repeat_handle">
-										<div class="repeat_handle_mid">
-											<!-- 喜欢的人数 -->
-											<span class="likes">
-												<svg id="olymp-heart-icon" viewBox="0 0 36 32">
-													<title>heart-icon</title>
-													<path d="M23.111 21.333h3.556v3.556h-3.556v-3.556z"></path>
-													<path d="M32.512 2.997c-2.014-2.011-4.263-3.006-7.006-3.006-2.62 0-5.545 2.089-7.728 4.304-2.254-2.217-5.086-4.295-7.797-4.295-2.652 0-4.99 0.793-6.937 2.738-4.057 4.043-4.057 10.599 0 14.647 1.157 1.157 12.402 13.657 12.402 13.657 0.64 0.638 1.481 0.958 2.32 0.958s1.678-0.32 2.318-0.958l1.863-2.012-2.523-2.507-1.655 1.787c-2.078-2.311-11.095-12.324-12.213-13.442-1.291-1.285-2-2.994-2-4.811 0-1.813 0.709-3.518 2-4.804 1.177-1.175 2.54-1.698 4.425-1.698 0.464 0 2.215 0.236 5.303 3.273l2.533 2.492 2.492-2.532c2.208-2.242 4.201-3.244 5.196-3.244 1.769 0 3.113 0.588 4.496 1.97 1.289 1.284 1.998 2.99 1.998 4.804 0 1.815-0.709 3.522-1.966 4.775-0.087 0.085-0.098 0.094-1.9 2.041l-0.156 0.167 2.523 2.51 0.24-0.26c0 0 1.742-1.881 1.774-1.911 4.055-4.043 4.055-10.603-0.002-14.644z"></path>
-												</svg>
-												<span>18</span>
-											</span>
-											<span class="reply">Reply</span>
-										</div>
-									</div>	
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- ----------------------------------- -->
-
-					<!-- head栏 -->
-					<div class="repeat_head">
-						<span class="repeat_head_avatar">
-							<img src="image/home/avatar4-sm.jpg" style="width: 100%;border-radius: 50%;">
-						</span>
-						<div class="repeat_head_info">
-							<span class="repeat_head_name">
-								<span> Chris Greyson</span>
-								<span>
-									<svg id="olymp-three-dots-icon" viewBox="0 0 128 32" style="width: 1.5rem;fill: #c0c4d8;">
-										<title>three-dots-icon</title>
-										<path d="M112-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM64-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM16-0.008c-8.832 0-16 7.16-16 16s7.168 15.992 16 15.992 16-7.16 16-15.992c0-8.84-7.16-16-16-16z"></path>
-									</svg>
-								</span>
-							</span>
-							<span style="flex: 1;">1 hour ago</span>
-						</div>
-					</div>
-					<!-- content栏 -->
-					<div class="repeat_content">
-						Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.
-						<div class="repeat_handle">
-							<div class="repeat_handle_mid">
-								<!-- 喜欢的人数 -->
-								<span class="likes">
-									<svg id="olymp-heart-icon" viewBox="0 0 36 32">
-										<title>heart-icon</title>
-										<path d="M23.111 21.333h3.556v3.556h-3.556v-3.556z"></path>
-										<path d="M32.512 2.997c-2.014-2.011-4.263-3.006-7.006-3.006-2.62 0-5.545 2.089-7.728 4.304-2.254-2.217-5.086-4.295-7.797-4.295-2.652 0-4.99 0.793-6.937 2.738-4.057 4.043-4.057 10.599 0 14.647 1.157 1.157 12.402 13.657 12.402 13.657 0.64 0.638 1.481 0.958 2.32 0.958s1.678-0.32 2.318-0.958l1.863-2.012-2.523-2.507-1.655 1.787c-2.078-2.311-11.095-12.324-12.213-13.442-1.291-1.285-2-2.994-2-4.811 0-1.813 0.709-3.518 2-4.804 1.177-1.175 2.54-1.698 4.425-1.698 0.464 0 2.215 0.236 5.303 3.273l2.533 2.492 2.492-2.532c2.208-2.242 4.201-3.244 5.196-3.244 1.769 0 3.113 0.588 4.496 1.97 1.289 1.284 1.998 2.99 1.998 4.804 0 1.815-0.709 3.522-1.966 4.775-0.087 0.085-0.098 0.094-1.9 2.041l-0.156 0.167 2.523 2.51 0.24-0.26c0 0 1.742-1.881 1.774-1.911 4.055-4.043 4.055-10.603-0.002-14.644z"></path>
-									</svg>
-									<span>18</span>
-								</span>
-								<span class="reply">Reply</span>
-							</div>
-						</div>	
 					</div>
 				</div>
 
 				<!-- 查看更多评论 -->
-				<div class="view-more">
-					View more comments <span>+</span>
-				</div>
-
-				<!-- 现在去评论 -->
-				<div class="repeat_now">
-					<span class="middle_head_avatar">
-						<img src="image/home/author-page.jpg" style="width: 100%;border-radius: 50%;">
-					</span>
-					<div class="middle_head_info">
-						<textarea maxlength="150" autoHeightEnabled= false;></textarea>
-					</div>
-					<!-- 取消/发布按钮 -->
-					<span class="post">Post Comment</span>
-					<span class="cancel">Cancel</span>
-				</div>
-			</div>
-
-			<!-- 发表含图片的说说 -->
-			<div class="part1">
-				<!-- head栏 -->
-				<div class="middle_head">
-					<span class="middle_head_avatar">
-						<img src="image/home/author-page.jpg" style="width: 100%;border-radius: 50%;">
-					</span>
-					<div class="middle_head_info">
-						<span class="middle_head_name">
-							<span>James Spiegel</span>
-							<span>
-								<svg id="olymp-three-dots-icon" viewBox="0 0 128 32" style="width: 1.5rem;fill: #c0c4d8;">
-									<title>three-dots-icon</title>
-									<path d="M112-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM64-0.008c-8.84 0-16 7.16-16 16 0 8.832 7.16 15.992 16 15.992s16-7.16 16-15.992c0-8.84-7.16-16-16-16zM16-0.008c-8.832 0-16 7.16-16 16s7.168 15.992 16 15.992 16-7.16 16-15.992c0-8.84-7.16-16-16-16z"></path>
-								</svg>
-							</span>
-						</span>
-						<span style="flex: 1;">19 hours ago</span>
-					</div>
-				</div>
-				
-				<!-- content栏 -->
-				<div class="middle_content">
-					Hi! Everyone should check out these amazing photographs that my friend shot the past week. Here’s one of them...leave a kind comment!
-					<div class="img_push">
-						<img src="image/home/post-photo6.jpg" style="width: 100%;">
-					</div>
-				</div>
-				
-				<!-- handle栏 -->
-				<div class="middle_handle">
-					<div class="middle_handle_mid">
-						<!-- 喜欢的人数 -->
-						<span class="likes">
-							<svg id="olymp-heart-icon" viewBox="0 0 36 32">
-								<title>heart-icon</title>
-								<path d="M23.111 21.333h3.556v3.556h-3.556v-3.556z"></path>
-								<path d="M32.512 2.997c-2.014-2.011-4.263-3.006-7.006-3.006-2.62 0-5.545 2.089-7.728 4.304-2.254-2.217-5.086-4.295-7.797-4.295-2.652 0-4.99 0.793-6.937 2.738-4.057 4.043-4.057 10.599 0 14.647 1.157 1.157 12.402 13.657 12.402 13.657 0.64 0.638 1.481 0.958 2.32 0.958s1.678-0.32 2.318-0.958l1.863-2.012-2.523-2.507-1.655 1.787c-2.078-2.311-11.095-12.324-12.213-13.442-1.291-1.285-2-2.994-2-4.811 0-1.813 0.709-3.518 2-4.804 1.177-1.175 2.54-1.698 4.425-1.698 0.464 0 2.215 0.236 5.303 3.273l2.533 2.492 2.492-2.532c2.208-2.242 4.201-3.244 5.196-3.244 1.769 0 3.113 0.588 4.496 1.97 1.289 1.284 1.998 2.99 1.998 4.804 0 1.815-0.709 3.522-1.966 4.775-0.087 0.085-0.098 0.094-1.9 2.041l-0.156 0.167 2.523 2.51 0.24-0.26c0 0 1.742-1.881 1.774-1.911 4.055-4.043 4.055-10.603-0.002-14.644z"></path>
-							</svg>
-							<span>18</span>
-						</span>
-						<!-- 点赞人数 -->
-						<ul class="avatar">
-							<li>
-								<img src="image/home/friend-harmonic7.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic8.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic9.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic10.jpg">
-							</li>
-							<li>
-								<img src="image/home/friend-harmonic11.jpg">
-							</li>
-						</ul>
-						<!-- 更多人喜欢 -->
-						<div class="more">
-							<span>
-								<span style="font-weight: 700;color: #5f6071">Jenny,Robert</span>  and
-							</span>
-							<span>6 more liked this</span>
+				<transition name="fade">
+					<div v-if="item.article.flag">
+						<div class="view-more" v-on:click="repeat_show = !repeat_show">
+							View more comments <span>+</span>
 						</div>
-						<!-- 消息/评论 -->
-						<div class="msg_repeat">
-							<span class="msg">
-								<svg id="olymp-speech-balloon-icon" viewBox="0 0 35 32" style="width: 1.75rem;fill: #c2c5d9;margin-top: .5rem;">
-									<title>speech-balloon-icon</title>
-									<path d="M32 0h-28.8c-1.768 0-3.2 1.434-3.2 3.2v16c0 1.766 1.434 3.2 3.2 3.2 0 0 0.6 0 1.6 0v-3.2h-1.6v-16h28.8v19.2c1.766 0 3.2-1.434 3.2-3.2v-16c0-1.766-1.434-3.2-3.2-3.2zM20.8 22.4h1.6v-3.2h-1.6v3.2zM25.6 22.4h3.2v-3.2h-3.2v3.2zM27.2 6.4h-20.8v3.2h20.8v-3.2zM6.4 16h12.8v-3.2h-12.8v3.2z"></path>
-									<path d="M17.6 19.2l-9.6 6.626v-6.626h-3.2v12.8l12.8-9.6h3.2v-3.2z"></path>
-								</svg>
-								<span>17</span>
+
+
+						<!-- 现在去评论 -->
+						<div class="repeat_now">
+							<span class="middle_head_avatar">
+								<img src="image/home/author-page.jpg" style="width: 100%;border-radius: 50%;">
 							</span>
-							<span class="repeat">
-								<svg id="olymp-share-icon" viewBox="0 0 40 32" style="width: 2rem;fill: #c2c5d9;margin-top: .5rem;">
-									<title>share-icon</title>
-									<path d="M11.168 16.788v3.046h9.132v3.048h-9.132v3.072l-6.095-4.584 6.095-4.582zM14.216 10.683l-14.216 10.685 14.216 10.688v-6.129h9.132v-9.144h-9.132v-6.1z"></path>
-									<path d="M15.739 6.095h3.048v3.048h-3.048v-3.048z"></path>
-									<path d="M35.854 8.25l-10.973-8.25v6.1h-3.048v3.049h6.095v-3.046l6.095 4.582-6.095 4.582v-3.072h-12.18v3.048h9.132v6.129l14.214-10.686z"></path>
-								</svg>
-								<span style="transform: translate(.5rem,-.4rem);">24</span>
-							</span>
+							<div class="middle_head_info">
+								<textarea maxlength="150" autoHeightEnabled= false;></textarea>
+							</div>
+							<!-- 取消/发布按钮 -->
+							<span class="post">Post Comment</span>
+							<span class="cancel">Cancel</span>
 						</div>
 					</div>
-				</div>
-				
-				<!-- 右侧悬浮栏 -->
-				<ul class="middle_right">
-					<li>
-						<span>
-							<svg id="olymp-like-post-icon" viewBox="0 0 37 32">
-								<title>like-post-icon</title>
-								<path d="M33.449 2.994c-2.066-2.009-4.377-3.006-7.191-3.006-2.69 0-5.691 2.089-7.934 4.306-2.311-2.217-5.221-4.295-8.002-4.295-2.722 0-5.122 0.793-7.12 2.736-4.165 4.043-4.165 10.601 0 14.649 1.189 1.154 12.729 13.655 12.729 13.655 0.656 0.64 1.52 0.96 2.379 0.96 0.862 0 1.721-0.32 2.382-0.96l1.726-1.815-3.237-3.234-0.857 0.905c-3.122-3.381-10.862-11.744-11.936-12.789-1.122-1.090-1.739-2.528-1.737-4.050 0-1.52 0.617-2.955 1.739-4.046 1.024-0.997 2.238-1.44 3.931-1.44 0.777 0 2.512 0.791 4.839 3.022l3.214 3.081 3.163-3.131c2.215-2.19 4.037-2.985 4.718-2.985 1.573 0 2.77 0.512 4.007 1.714 1.12 1.088 1.737 2.523 1.737 4.046s-0.617 2.958-1.669 3.982c-0.13 0.121-0.135 0.123-2.037 2.123l-0.187 0.199 3.23 3.237 0.046-0.048 0.242-0.258c0 0 1.79-1.881 1.824-1.911 4.162-4.043 4.162-10.603 0-14.647z"></path>
-								<path d="M22.889 20.578h4.571v4.571h-4.571v-4.571z"></path>
-							</svg>
-						</span>
-					</li>
-					<li>
-						<span>
-							<svg id="olymp-comments-post-icon" viewBox="0 0 36 32">
-								<title>comments-post-icon</title>
-								<path d="M32 0h-28c-2.21 0-4 1.792-4 4v18c0 2.208 1.792 4 4 4 0 0 0.75 0 2 0v-4h-2v-18h28v22c2.208 0 4-1.792 4-4v-18c0-2.208-1.792-4-4-4zM18 26h2v-4h-2v4zM24 26h4v-4h-4v4zM8 12h20v-4h-20v4zM8 18h12v-4h-12v4z"></path>
-								<path d="M18 22l-8 4.282v-4.282h-4v10l12-6v-4z"></path>
-							</svg>
-						</span>
-					</li>
-					<li>
-						<span>
-							<svg id="olymp-share-icon" viewBox="0 0 40 32" style="width: 2rem;margin-top: .9rem;">
-								<title>share-icon</title>
-								<path d="M11.168 16.788v3.046h9.132v3.048h-9.132v3.072l-6.095-4.584 6.095-4.582zM14.216 10.683l-14.216 10.685 14.216 10.688v-6.129h9.132v-9.144h-9.132v-6.1z"></path>
-								<path d="M15.739 6.095h3.048v3.048h-3.048v-3.048z"></path>
-								<path d="M35.854 8.25l-10.973-8.25v6.1h-3.048v3.049h6.095v-3.046l6.095 4.582-6.095 4.582v-3.072h-12.18v3.048h9.132v6.129l14.214-10.686z"></path>
-							</svg>
-						</span>
-					</li>
-				</ul>
+			    </transition>
 			</div>
 
 			<!-- 底部懒加载 -->
@@ -1279,7 +799,275 @@
 		</div>
 		
 		<!-- 东部 -->
-		<div style="flex: 1;background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);">3
+		<div class="East">
+			<!-- 最新相片 -->
+			<div class="last_photos">
+				<span class="title">Last Photos</span>
+				<ul class="content">
+					<li><img src="image/home/last-photo10-large.jpg"></li>
+					<li><img src="image/home/last-phot11-large.jpg"></li>
+					<li><img src="image/home/last-phot12-large.jpg"></li>
+					<li><img src="image/home/last-phot13-large.jpg"></li>
+					<li><img src="image/home/last-phot14-large.jpg"></li>
+					<li><img src="image/home/last-phot15-large.jpg"></li>
+					<li><img src="image/home/last-phot16-large.jpg"></li>
+					<li><img src="image/home/last-phot17-large.jpg"></li>
+					<li><img src="image/home/last-phot18-large.jpg"></li>
+				</ul>
+			</div><!-- margin-top: 1.42rem; -->
+
+			<!-- 博客文章 -->
+			<div class="blog_posts">
+				<span class="title">Blog Posts</span>
+				<!-- 遍历博客文章 -->
+				<!-- 文章1 -->
+				<div class="post">
+					<!-- 文章标题 -->
+					<div class="post_name">
+						My Perfect Vacations in South America and Europe
+					</div>
+					<!-- 文章内容 -->
+					<div class="post_content">
+						Lorem ipsum dolor sit amet, consect adipisicing elit, sed do eiusmod por incidid ut labore et.
+					</div>
+					<!-- 文章创建时间 -->
+					<div class="post_time">
+						7 hours ago
+					</div>
+				</div>
+
+				<!-- 文章2 -->
+				<div class="post">
+					<!-- 文章标题 -->
+					<div class="post_name">
+						The Big Experience of Travelling Alone
+					</div>
+					<!-- 文章内容 -->
+					<div class="post_content">
+						Lorem ipsum dolor sit amet, consect adipisicing elit, sed do eiusmod por incidid ut labore et.
+					</div>
+					<!-- 文章创建时间 -->
+					<div class="post_time">
+						March 18th, at 6:52pm
+					</div>
+				</div>
+			</div>
+
+			<!-- 朋友 -->
+			<div class="friends">
+				<span class="title">Friends(86)</span>
+				<ul>
+					<li><img src="image/home/avatar24-sm.jpg"></li>
+					<li><img src="image/home/avatar25-sm.jpg"></li>
+					<li><img src="image/home/avatar26-sm.jpg"></li>
+					<li><img src="image/home/avatar27-sm.jpg"></li>
+					<li><img src="image/home/avatar28-sm.jpg"></li>
+					<li><img src="image/home/avatar29-sm.jpg"></li>
+					<li><img src="image/home/avatar30-sm.jpg"></li>
+					<li><img src="image/home/avatar31-sm.jpg"></li>
+					<li><img src="image/home/avatar32-sm.jpg"></li>
+					<li><img src="image/home/avatar33-sm.jpg"></li>
+					<li><img src="image/home/avatar34-sm.jpg"></li>
+					<li><img src="image/home/avatar35-sm.jpg"></li>
+					<li><img src="image/home/avatar36-sm.jpg"></li>
+					<li><img src="image/home/avatar37-sm.jpg"></li>
+					<li><img src="image/home/avatar38-sm.jpg"></li>
+					<li>+74</li>
+				</ul>
+			</div>
+
+			<!-- 特别喜爱 -->
+			<div class="Favourite">
+				<span class="title">Favourite Pages</span>
+				<ul>
+					<li>
+						<span class="font">
+							<img src="image/home/avatar43-sm.jpg">
+						</span>
+						<div class="page">
+							<span>The Marina Bar</span>
+							<span>Restaurant / Bar</span>
+							<!-- 收藏图标 -->
+							<span class="fav">
+								<svg id="olymp-star-icon" viewBox="0 0 32 32">
+									<title>star-icon</title>
+									<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
+									<path d="M31.88 11.91c-0.275-0.826-0.984-1.43-1.837-1.562l-8.309-1.28-3.611-7.763c-0.379-0.816-1.194-1.336-2.090-1.336-0.893 0-1.707 0.522-2.086 1.336l-3.613 7.763-8.309 1.28c-0.854 0.131-1.563 0.736-1.838 1.562-0.275 0.827-0.067 1.739 0.536 2.36l6.088 6.298-1.413 8.731c-0.142 0.88 0.226 1.762 0.947 2.277 0.397 0.28 0.862 0.424 1.328 0.424 0.384 0 0.766-0.098 1.115-0.291l7.243-4.037 4.768 2.656v-3.662l-4.768-2.658-7.184 4.005 1.378-8.517-1.114-1.154-4.922-5.090 8.323-1.282 0.723-1.552 2.798-6.014 3.52 7.566 8.326 1.283-6.038 6.243 0.733 4.53h3.242l-0.56-3.458 6.091-6.298c0.6-0.622 0.806-1.534 0.531-2.362z"></path>
+								</svg>
+							</span>
+						</div>
+					</li>
+					<li>
+						<span class="font">
+							<img src="image/home/avatar44-sm.jpg">
+						</span>
+						<div class="page">
+							<span>Tapronus Rock</span>
+							<span>Rock Band</span>
+							<!-- 收藏图标 -->
+							<span class="fav">
+								<svg id="olymp-star-icon" viewBox="0 0 32 32">
+									<title>star-icon</title>
+									<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
+									<path d="M31.88 11.91c-0.275-0.826-0.984-1.43-1.837-1.562l-8.309-1.28-3.611-7.763c-0.379-0.816-1.194-1.336-2.090-1.336-0.893 0-1.707 0.522-2.086 1.336l-3.613 7.763-8.309 1.28c-0.854 0.131-1.563 0.736-1.838 1.562-0.275 0.827-0.067 1.739 0.536 2.36l6.088 6.298-1.413 8.731c-0.142 0.88 0.226 1.762 0.947 2.277 0.397 0.28 0.862 0.424 1.328 0.424 0.384 0 0.766-0.098 1.115-0.291l7.243-4.037 4.768 2.656v-3.662l-4.768-2.658-7.184 4.005 1.378-8.517-1.114-1.154-4.922-5.090 8.323-1.282 0.723-1.552 2.798-6.014 3.52 7.566 8.326 1.283-6.038 6.243 0.733 4.53h3.242l-0.56-3.458 6.091-6.298c0.6-0.622 0.806-1.534 0.531-2.362z"></path>
+								</svg>
+							</span>
+						</div>
+					</li>
+					<li>
+						<span class="font">
+							<img src="image/home/avatar45-sm.jpg">
+						</span>
+						<div class="page">
+							<span>Pixel Digital Design</span>
+							<span>Company</span>
+							<!-- 收藏图标 -->
+							<span class="fav">
+								<svg id="olymp-star-icon" viewBox="0 0 32 32">
+									<title>star-icon</title>
+									<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
+									<path d="M31.88 11.91c-0.275-0.826-0.984-1.43-1.837-1.562l-8.309-1.28-3.611-7.763c-0.379-0.816-1.194-1.336-2.090-1.336-0.893 0-1.707 0.522-2.086 1.336l-3.613 7.763-8.309 1.28c-0.854 0.131-1.563 0.736-1.838 1.562-0.275 0.827-0.067 1.739 0.536 2.36l6.088 6.298-1.413 8.731c-0.142 0.88 0.226 1.762 0.947 2.277 0.397 0.28 0.862 0.424 1.328 0.424 0.384 0 0.766-0.098 1.115-0.291l7.243-4.037 4.768 2.656v-3.662l-4.768-2.658-7.184 4.005 1.378-8.517-1.114-1.154-4.922-5.090 8.323-1.282 0.723-1.552 2.798-6.014 3.52 7.566 8.326 1.283-6.038 6.243 0.733 4.53h3.242l-0.56-3.458 6.091-6.298c0.6-0.622 0.806-1.534 0.531-2.362z"></path>
+								</svg>
+							</span>
+						</div>
+					</li>
+					<li>
+						<span class="font">
+							<img src="image/home/avatar46-sm.jpg">
+						</span>
+						<div class="page">
+							<span>Thompson’s Custom Clothing Boutique</span>
+							<span>Clothing Store</span>
+							<!-- 收藏图标 -->
+							<span class="fav">
+								<svg id="olymp-star-icon" viewBox="0 0 32 32">
+									<title>star-icon</title>
+									<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
+									<path d="M31.88 11.91c-0.275-0.826-0.984-1.43-1.837-1.562l-8.309-1.28-3.611-7.763c-0.379-0.816-1.194-1.336-2.090-1.336-0.893 0-1.707 0.522-2.086 1.336l-3.613 7.763-8.309 1.28c-0.854 0.131-1.563 0.736-1.838 1.562-0.275 0.827-0.067 1.739 0.536 2.36l6.088 6.298-1.413 8.731c-0.142 0.88 0.226 1.762 0.947 2.277 0.397 0.28 0.862 0.424 1.328 0.424 0.384 0 0.766-0.098 1.115-0.291l7.243-4.037 4.768 2.656v-3.662l-4.768-2.658-7.184 4.005 1.378-8.517-1.114-1.154-4.922-5.090 8.323-1.282 0.723-1.552 2.798-6.014 3.52 7.566 8.326 1.283-6.038 6.243 0.733 4.53h3.242l-0.56-3.458 6.091-6.298c0.6-0.622 0.806-1.534 0.531-2.362z"></path>
+								</svg>
+							</span>
+						</div>
+					</li>
+					<li>
+						<span class="font">
+							<img src="image/home/avatar41-sm.jpg">
+						</span>
+						<div class="page">
+							<span>Crimson Agency</span>
+							<span>Company</span>
+							<!-- 收藏图标 -->
+							<span class="fav">
+								<svg id="olymp-star-icon" viewBox="0 0 32 32">
+									<title>star-icon</title>
+									<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
+									<path d="M31.88 11.91c-0.275-0.826-0.984-1.43-1.837-1.562l-8.309-1.28-3.611-7.763c-0.379-0.816-1.194-1.336-2.090-1.336-0.893 0-1.707 0.522-2.086 1.336l-3.613 7.763-8.309 1.28c-0.854 0.131-1.563 0.736-1.838 1.562-0.275 0.827-0.067 1.739 0.536 2.36l6.088 6.298-1.413 8.731c-0.142 0.88 0.226 1.762 0.947 2.277 0.397 0.28 0.862 0.424 1.328 0.424 0.384 0 0.766-0.098 1.115-0.291l7.243-4.037 4.768 2.656v-3.662l-4.768-2.658-7.184 4.005 1.378-8.517-1.114-1.154-4.922-5.090 8.323-1.282 0.723-1.552 2.798-6.014 3.52 7.566 8.326 1.283-6.038 6.243 0.733 4.53h3.242l-0.56-3.458 6.091-6.298c0.6-0.622 0.806-1.534 0.531-2.362z"></path>
+								</svg>
+							</span>
+						</div>
+					</li>
+					<li>
+						<span class="font">
+							<img src="image/home/avatar42-sm.jpg">
+						</span>
+						<div class="page">
+							<span>Mannequin Angel</span>
+							<span>Clothing Store</span>
+							<!-- 收藏图标 -->
+							<span class="fav">
+								<svg id="olymp-star-icon" viewBox="0 0 32 32">
+									<title>star-icon</title>
+									<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
+									<path d="M31.88 11.91c-0.275-0.826-0.984-1.43-1.837-1.562l-8.309-1.28-3.611-7.763c-0.379-0.816-1.194-1.336-2.090-1.336-0.893 0-1.707 0.522-2.086 1.336l-3.613 7.763-8.309 1.28c-0.854 0.131-1.563 0.736-1.838 1.562-0.275 0.827-0.067 1.739 0.536 2.36l6.088 6.298-1.413 8.731c-0.142 0.88 0.226 1.762 0.947 2.277 0.397 0.28 0.862 0.424 1.328 0.424 0.384 0 0.766-0.098 1.115-0.291l7.243-4.037 4.768 2.656v-3.662l-4.768-2.658-7.184 4.005 1.378-8.517-1.114-1.154-4.922-5.090 8.323-1.282 0.723-1.552 2.798-6.014 3.52 7.566 8.326 1.283-6.038 6.243 0.733 4.53h3.242l-0.56-3.458 6.091-6.298c0.6-0.622 0.806-1.534 0.531-2.362z"></path>
+								</svg>
+							</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<!-- 民意测验 -->
+			<div class="Poll">
+				<span class="title">James's Poll</span>
+				<div class="content">
+					<!-- 测验题目 -->
+					<div class="test">If you had to choose, which actor do you prefer to be the next Darkman?</div>
+					<ul class="vote">
+						<li>
+							<!-- 选择投票人 -->
+							<div class="line1">
+								<span class="dot"></span>
+								<span class="name">Thomas Bale</span>
+								<span class="percentage">61%</span>
+							</div>
+							<!-- 进度条 -->
+							<div class="line2">
+								<span class="bar"></span>
+							</div>
+							<!-- 投票人数 -->
+							<div class="line3">12 friends voted for this</div>
+							<!-- 部分投票人头像 -->
+							<ul class="line4">
+								<li><img src="image/home/friend-harmonic1.jpg"></li>
+								<li><img src="image/home/friend-harmonic2.jpg"></li>
+								<li><img src="image/home/friend-harmonic3.jpg"></li>
+								<li><img src="image/home/friend-harmonic4.jpg"></li>
+								<li><img src="image/home/friend-harmonic5.jpg"></li>
+								<!-- 更多个 -->
+								<li><span>+3</span></li>
+							</ul>
+						</li>
+						<li>
+							<!-- 选择投票人 -->
+							<div class="line1">
+								<span class="dot"></span>
+								<span class="name">Ben Robertson</span>
+								<span class="percentage">27%</span>
+							</div>
+							<!-- 进度条 -->
+							<div class="line2">
+								<span class="bar" style="width: 27%;"></span>
+							</div>
+							<!-- 投票人数 -->
+							<div class="line3">7 friends voted for this</div>
+							<!-- 部分投票人头像 -->
+							<ul class="line4">
+								<li><img src="image/home/friend-harmonic1.jpg"></li>
+								<li><img src="image/home/friend-harmonic2.jpg"></li>
+								<li><img src="image/home/friend-harmonic3.jpg"></li>
+								<li><img src="image/home/friend-harmonic4.jpg"></li>
+								<li><img src="image/home/friend-harmonic5.jpg"></li>
+								<!-- 更多个 -->
+								<li><span>+3</span></li>
+							</ul>
+						</li>
+						<li>
+							<!-- 选择投票人 -->
+							<div class="line1">
+								<span class="dot"></span>
+								<span class="name">Michael Streiton</span>
+								<span class="percentage">11%</span>
+							</div>
+							<!-- 进度条 -->
+							<div class="line2">
+								<span class="bar" style="width: 11%;"></span>
+							</div>
+							<!-- 投票人数 -->
+							<div class="line3">2 people voted for this</div>
+							<!-- 部分投票人头像 -->
+							<ul class="line4">
+								<li><img src="image/home/friend-harmonic1.jpg"></li>
+								<li><img src="image/home/friend-harmonic2.jpg"></li>
+								<li><img src="image/home/friend-harmonic3.jpg"></li>
+								<li><img src="image/home/friend-harmonic4.jpg"></li>
+								<li><img src="image/home/friend-harmonic5.jpg"></li>
+								<!-- 更多个 -->
+								<li><span>+3</span></li>
+							</ul>
+						</li>
+					</ul>
+					<span class="vote_now">Vote now!</span>
+				</div>
+			</div>
 		</div>
 	</div>
 
