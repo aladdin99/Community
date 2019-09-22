@@ -1562,6 +1562,9 @@
 						display: inline-block;
 						height: 100%;
 						line-height: 2.58rem;
+						// background-color: green;
+						width: 5rem;
+						cursor: pointer;
 						svg {
 							width: 1.75rem;
 							fill: #c2c5d9;
@@ -1573,13 +1576,22 @@
 							// background-color: yellow;
 							transform: translate(.5rem,-.5rem);
 						}
-						&:hover {
-							cursor: pointer;
-							color: #ff5e3a;
-							svg {
-								fill: #ff5e3a!important;
-								transition: all .3s ease;
-							}
+						// &:hover {
+						// 	cursor: pointer;
+						// 	color: #ff5e3a;
+						// 	svg {
+						// 		fill: #ff5e3a!important;
+						// 		transition: all .3s ease;
+						// 	}
+						// }
+
+					}
+					// 收藏图标/是否收藏状态
+					.faved {
+						color: #ff5e3a;
+						svg {
+							fill: #ff5e3a;
+							transition: all .3s ease;
 						}
 					}
 					.avatar {
@@ -2157,6 +2169,12 @@
 								transition: all .3s ease;
 							}
 						}
+						// 收藏图标/是否收藏状态
+						.faved {
+							svg path {
+								fill: red;
+							}
+						}
 					}
 					.fav {
 						position: absolute;
@@ -2217,9 +2235,46 @@
 							height: 1.3rem;
 							border-radius: 50%;
 							cursor: pointer;
-							border: 1px solid #e5e8ee;
+							// border: 1px solid #e5e8ee;
+							background-color: #fff;
 							margin-right: 1rem;
 							transform: translateY(.2rem);
+							&:before {
+								content: "";
+								width: 1.3rem;
+								height: 1.3rem;
+								border: 1px solid #dee0e9;
+								display: block;
+								border-radius: 50%;
+								vertical-align: middle;
+								background-color: #fff;
+								transition: all .3s ease;
+							}
+							&:checked:after {
+								content: "";
+								width: .55rem;
+								height: .55rem;
+								border-radius: 50%;							    
+								border-top: transparent;
+							    border-right: transparent;
+							    text-align: center;
+							    display: block;
+								background-color: #ff5e3a;
+							    position: absolute;
+							    top: 0;
+							    bottom: 0;
+							    left: 0;
+							    right: 0;
+							    margin: auto;
+							    vertical-align: middle;
+							    // transform: translate(-.01rem,-.05rem);
+							    transform: translateX(.02rem);
+							    transition: all .2s ease;
+							}
+							&:checked:before {
+								border: 1px solid #ff5e3a;
+								transition: all .2s ease;
+							}
 						}
 						.name {
 							display: inline-block;

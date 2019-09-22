@@ -1,8 +1,9 @@
 var vm = new Vue({
     el: "#app",
     data: {
-       repeat_show: false,
-       repeat_num: 1,
+        repeat_show: false,
+        repeat_num: 1,
+        picked: "",
     // 西部-->简介
         brief_content: [{
                 me: {
@@ -112,7 +113,8 @@ var vm = new Vue({
                 	flag: false,
                     dateline: "20 hours ago",
                     content: "Hello World!",
-                    fav: "99",
+                    fav: 25,
+                    active: false,
                     avatar: [
                     	{ order: "image/home/friend-harmonic7.jpg" },
                     	{ order: "image/home/friend-harmonic8.jpg" },
@@ -135,7 +137,8 @@ var vm = new Vue({
                 	flag: false,
                     dateline: "21 hours ago",
                     content: "If someone missed it, check out the new song by System of a Revenge! I thinks they are going back to their roots...",
-                    fav: "99",
+                    fav: 99,
+                    active: false,
                     avatar: [
                     	{ order: "image/home/friend-harmonic7.jpg" },
                     	{ order: "image/home/friend-harmonic8.jpg" },
@@ -164,7 +167,8 @@ var vm = new Vue({
                 	flag: false,
                     dateline: "21 hours ago",
                     content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.",
-                    fav: "99",
+                    fav: 42,
+                    active: false,
                     avatar: [
                     	{ order: "image/home/friend-harmonic7.jpg" },
                     	{ order: "image/home/friend-harmonic8.jpg" },
@@ -236,7 +240,8 @@ var vm = new Vue({
                 	flag: false,
                     dateline: "20 hours ago",
                     content: " Hi! Everyone should check out these amazing photographs that my friend shot the past week. Here’s one of them...leave a kind comment!",
-                    fav: "18",
+                    fav: 18,
+                    active: false,
                     avatar: [
                     	{ order: "image/home/friend-harmonic7.jpg" },
                     	{ order: "image/home/friend-harmonic8.jpg" },
@@ -301,32 +306,38 @@ var vm = new Vue({
     		{
     			img: "image/home/avatar43-sm.jpg",
     			title: "The Marina Bar",
-    			author: "Restaurant / Bar"
+    			author: "Restaurant / Bar",
+    			active: false
     		},
     		{
     			img: "image/home/avatar44-sm.jpg",
     			title: "Tapronus Rock",
-    			author: "Rock Band"
+    			author: "Rock Band",
+    			active: false
     		},
     		{
     			img: "image/home/avatar45-sm.jpg",
     			title: "Pixel Digital Design",
-    			author: "Company"
+    			author: "Company",
+    			active: false
     		},
     		{
     			img: "image/home/avatar46-sm.jpg",
     			title: "Thompson’s Custom Clothing Boutique",
-    			author: "Clothing Store"
+    			author: "Clothing Store",
+    			active: false
     		},
     		{
     			img: "image/home/avatar41-sm.jpg",
     			title: "Crimson Agency",
-    			author: "Company"
+    			author: "Company",
+    			active: false
     		},
     		{
     			img: "image/home/avatar42-sm.jpg",
     			title: "Mannequin Angel",
-    			author: "Clothing Store"
+    			author: "Clothing Store",
+    			active: false
     		}
     	],
     // 东部-->民意测验
@@ -370,6 +381,13 @@ var vm = new Vue({
     			]
     		}
     	]
+    },
+    methods: {
+    	add_fav: function(active) {
+    		active = !active;
+    		// num += 1;
+    		alert(active);
+    	}
     },
     computed: {
     	// 判断子子评论是否展开

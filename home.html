@@ -589,7 +589,7 @@
 				<div class="middle_handle">
 					<div class="middle_handle_mid">
 						<!-- 喜欢的人数 -->
-						<span class="likes">
+						<span class="likes" v-bind:class="{faved:item.article.active}" v-on:click="item.article.active=!item.article.active;if(item.article.active){item.article.fav +=1;}else{item.article.fav -=1}">
 							<svg id="olymp-heart-icon" viewBox="0 0 36 32">
 								<title>heart-icon</title>
 								<path d="M23.111 21.333h3.556v3.556h-3.556v-3.556z"></path>
@@ -840,7 +840,7 @@
 							<span>{{item.title}}</span>
 							<span>{{item.author}}</span>
 							<!-- 收藏图标 -->
-							<span class="fav">
+							<span class="fav" v-bind:class="{faved:item.active}" v-on:click="item.active=!item.active">
 								<svg id="olymp-star-icon" viewBox="0 0 32 32">
 									<title>star-icon</title>
 									<path d="M24.029 27.192h3.2v3.2h-3.2v-3.2z"></path>
@@ -862,9 +862,12 @@
 						<li v-for="index in item.option">
 							<!-- 选择投票人 -->
 							<div class="line1">
-								<span class="dot"></span>
-								<span class="name">{{index.name}}</span>
-								<span class="percentage">{{index.per}}</span>
+								<!-- <span class="dot"></span> -->
+								<input type="radio" class="dot" :id="index.name" :value="index.name" v-model="picked">
+								<label :for="index.name" class="name">{{index.name}}</label>
+								<!-- <span class="name">{{index.name}}</span> -->
+								<!-- <span class="percentage">{{index.per}}</span> -->
+								<label :for="index.name" class="percentage">{{index.per}}</label>
 							</div>
 							<!-- 进度条 -->
 							<div class="line2">
