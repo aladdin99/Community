@@ -1,3 +1,5 @@
+// import VueLazyload from 'vue-lazyload'
+Vue.use( VueLazyload )
 var vm = new Vue({
     el: "#app",
     data: {
@@ -186,7 +188,8 @@ var vm = new Vue({
 	                    	com_name: "Elaine Dreyfuss",
 	                    	com_time: "5 mins ago",
 	                    	com_content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium der doloremque laudantium.",
-	                    	com_fav: "22",
+	                    	com_fav: 22,
+                            com_active: false,
 	                    	com_comment: "",
 	                    	 // 是否显示 子子级评论用户信息
 	                    	inner_show:false
@@ -197,7 +200,8 @@ var vm = new Vue({
 	                    	com_name: "Chris Greyson",
 	                    	com_time: "1.5 hour ago",
 	                    	com_content: "Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.",
-	                    	com_fav: "25",
+	                    	com_fav: 25,
+                            com_active: false,
 	                    	inner_show:false,
 	                    	com_comment: [
 	                    		{
@@ -205,14 +209,16 @@ var vm = new Vue({
 	                    			ic_name:"Diana Jameson",
 	                    			ic_time:"39 mins ago",
 	                    			ic_content:"第一条评论!",
-	                    			ic_fav:"14"
+	                    			ic_fav: 14,
+                                    ic_active: false,
 	                    		},
 	                    		{
 	                    			ic_avatar:"image/home/avatar2-sm.jpg",
 	                    			ic_name:"Nicholas Grisom",
 	                    			ic_time:"29 mins ago",
 	                    			ic_content:"第二条评论!",
-	                    			ic_fav:"124"
+	                    			ic_fav: 124,
+                                    ic_active: false,
 	                    		}
 	                    	],
 	                    },
@@ -222,7 +228,8 @@ var vm = new Vue({
 	                    	com_name: "Chris Greyson",
 	                    	com_time: "1 hour ago",
 	                    	com_content: "Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.",
-	                    	com_fav: "123",
+	                    	com_fav: 123,
+                            com_active: false,
 	                    	com_comment: "",
 	                    	inner_show:false
 		                }
